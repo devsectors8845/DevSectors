@@ -1,0 +1,33 @@
+# dependencies
+/node_modules
+
+# Next.js
+/.next
+/out
+
+# production
+/build
+
+# local environment (keep secrets out of source control)
+.env*
+!.env.example
+
+# local inquiry storage
+/.data/*.ndjson
+
+# test and browser artifacts
+/coverage
+/playwright-report
+/test-results
+
+# operating systems and editors
+.DS_Store
+*.swp
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
