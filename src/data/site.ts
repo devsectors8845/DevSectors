@@ -182,7 +182,7 @@ export const siteIdentity = {
   positioning:
     "DevSectors helps teams plan, design, build, and improve dependable digital products without unnecessary complexity.",
   locale: "en-PK",
-  locationLabel: "Bahawalpur, Pakistan",
+  locationLabel: "Bahawalpur, Punjab, Pakistan",
   seoTitle: "DevSectors | Custom Software and Digital Product Studio",
   seoDescription:
     "DevSectors plans, designs, and builds custom software, web platforms, mobile apps, automation, and reliable cloud systems for growing teams.",
@@ -195,12 +195,12 @@ export const siteContact = {
   phone: "+92 344 4625292",
   phoneHref: "tel:+923444625292",
   address: {
-    line1: "Housing Society",
+    line1: "",
     city: "Bahawalpur",
     country: "Pakistan",
-    display: "Housing Society, Bahawalpur, Pakistan",
+    display: "Bahawalpur, Punjab, Pakistan",
   },
-  mapQuery: "Housing Society, Bahawalpur, Pakistan",
+  mapQuery: "Bahawalpur, Punjab, Pakistan",
 } as const satisfies SiteContact;
 
 export const siteConfig = {
