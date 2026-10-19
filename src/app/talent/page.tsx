@@ -95,7 +95,7 @@ export default function TalentPage() {
               <AlertTriangle aria-hidden="true" className="size-8" />
             </div>
             <div className="p-6 lg:p-8 lg:pl-2">
-              <h2 className="text-2xl font-display font-extrabold tracking-[-0.035em] text-ink">
+              <h2 className="text-2xl font-display font-extrabold tracking-[-0.035em] text-ink-soft">
                 No live-vacancy guarantee
               </h2>
               <p className="mt-3 max-w-4xl text-base leading-7 text-muted">
@@ -138,7 +138,7 @@ export default function TalentPage() {
               return (
                 <li
                   key={step.title}
-                  className="rounded-[1.5rem] border border-line bg-white p-6 shadow-soft sm:p-8"
+                  className="rounded-[1.5rem] border border-line bg-surface p-6 shadow-soft sm:p-8"
                 >
                   <div className="flex items-center justify-between gap-4">
                     <span className="flex size-11 items-center justify-center rounded-xl bg-mist text-mineral">
@@ -148,7 +148,7 @@ export default function TalentPage() {
                       0{index + 1}
                     </span>
                   </div>
-                  <h3 className="mt-7 text-2xl font-display font-extrabold leading-none tracking-[-0.035em] text-ink">
+                  <h3 className="mt-7 text-2xl font-display font-extrabold leading-none tracking-[-0.035em] text-ink-soft">
                     {step.title}
                   </h3>
                   <p className="mt-4 text-sm leading-6 text-muted">

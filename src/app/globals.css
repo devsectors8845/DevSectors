@@ -1,30 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-  --color-ink: #0b1220;
-  --color-ink-soft: #152033;
-  --color-paper: #f3f1e8;
-  --color-canvas: #fcfcf8;
-  --color-mineral: #2547d0;
-  --color-mineral-dark: #19339f;
-  --color-signal: #c7f36b;
-  --color-signal-dark: #95c636;
-  --color-coral: #ff6b4a;
-  --color-coral-ink: #b53616;
-  --color-focus: #d14322;
-  --color-mist: #dce3ff;
-  --color-muted: #536070;
-  --color-line: #d9dcd2;
-  --shadow-soft: 0 18px 60px rgba(11, 18, 32, 0.08);
-  --shadow-lift: 0 26px 70px rgba(11, 18, 32, 0.14);
+  --color-ink: #e8f0f3;
+  --color-ink-soft: #f3f7fa;
+  --color-paper: #031e27;
+  --color-canvas: #00151c;
+  --color-surface: #062833;
+  --color-surface-2: #082f3b;
+  --color-surface-3: #0b3845;
+  --color-mineral: #00aeef;
+  --color-mineral-dark: #0090c7;
+  --color-signal: #8eeb4d;
+  --color-signal-dark: #72c93a;
+  --color-coral: #19d7c5;
+  --color-coral-ink: #0a5b70;
+  --color-focus: #19d7c5;
+  --color-mist: #062833;
+  --color-muted: #6f8d97;
+  --color-line: #0a5b70;
+  --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.28);
+  --shadow-lift: 0 0 40px rgba(25, 215, 197, 0.12);
   --radius-panel: 1.5rem;
+  --ds-gradient: linear-gradient(135deg, #8eeb4d 0%, #19d7c5 48%, #00aeef 100%);
+}
+
+.ds-gradient-text {
+  background: var(--ds-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.ds-gradient-bg {
+  background: var(--ds-gradient);
+}
+
+.ds-glow {
+  box-shadow: 0 0 60px rgba(0, 174, 239, 0.10);
 }
 
 :root {
-  --font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  --font-display: "Arial Narrow", "Roboto Condensed", Inter, ui-sans-serif,
-    system-ui, sans-serif;
+  --font-body: Inter, Manrope, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: Inter, Manrope, ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   --header-height: 4.75rem;
 }
@@ -41,8 +60,19 @@ html {
 body {
   min-width: 320px;
   margin: 0;
-  background: var(--color-canvas);
-  color: var(--color-ink);
+  background:
+    radial-gradient(
+      circle at 12% 8%,
+      rgba(0, 174, 239, 0.10),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 88% 6%,
+      rgba(142, 235, 77, 0.07),
+      transparent 30%
+    ),
+    var(--color-canvas);
+  color: var(--color-ink-soft);
   font-family: var(--font-body);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -121,28 +151,28 @@ svg {
 
 .display-hero {
   font-family: var(--font-display);
-  font-size: clamp(3.35rem, 8.5vw, 8.25rem);
+  font-size: clamp(2.6rem, 6.4vw, 4.5rem);
   font-weight: 800;
-  letter-spacing: -0.065em;
-  line-height: 0.88;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
   text-wrap: balance;
 }
 
 .display-page {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 6.75rem);
+  font-size: clamp(2.35rem, 5.2vw, 4rem);
   font-weight: 800;
-  letter-spacing: -0.055em;
-  line-height: 0.92;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
   text-wrap: balance;
 }
 
 .heading-section {
   font-family: var(--font-display);
-  font-size: clamp(2.35rem, 5vw, 4.8rem);
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 0.96;
+  font-size: clamp(1.95rem, 3.9vw, 3rem);
+  font-weight: 750;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
   text-wrap: balance;
 }
 
@@ -196,65 +226,70 @@ svg {
 }
 
 .button-primary {
-  background: var(--color-signal);
-  color: var(--color-ink);
-  box-shadow: 0 10px 30px rgba(199, 243, 107, 0.2);
+  background: var(--ds-gradient);
+  color: var(--color-canvas);
+  box-shadow: 0 10px 30px rgba(25, 215, 197, 0.18);
 }
 
 .button-primary:hover {
-  background: #d5fa84;
-  box-shadow: 0 14px 36px rgba(199, 243, 107, 0.3);
+  background: var(--ds-gradient);
+  filter: brightness(1.08);
+  box-shadow: 0 14px 36px rgba(25, 215, 197, 0.28);
 }
 
 .button-dark {
-  background: var(--color-ink);
-  color: white;
+  background: var(--color-canvas);
+  color: var(--color-ink-soft);
+  border-color: var(--color-line);
 }
 
 .button-dark:hover {
-  background: var(--color-mineral);
+  background: var(--color-surface-2);
+  border-color: var(--color-coral);
 }
 
 .button-outline {
-  border-color: var(--color-muted);
+  border-color: var(--color-line);
   background: transparent;
-  color: var(--color-ink);
+  color: var(--color-ink-soft);
 }
 
 .button-outline:hover {
-  border-color: var(--color-ink);
-  background: white;
+  border-color: var(--color-coral);
+  background: rgba(6, 40, 51, 0.6);
+  color: var(--color-ink-soft);
 }
 
 .button-outline-light {
-  border-color: rgba(255, 255, 255, 0.45);
-  background: rgba(255, 255, 255, 0.06);
-  color: white;
+  border-color: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-ink-soft);
 }
 
 .button-outline-light:hover {
-  border-color: var(--color-signal);
-  color: var(--color-signal);
+  border-color: var(--color-coral);
+  background: rgba(25, 215, 197, 0.08);
+  color: var(--color-ink-soft);
 }
 
 .sector-grid {
   background-image:
-    linear-gradient(rgba(11, 18, 32, 0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(11, 18, 32, 0.08) 1px, transparent 1px);
+    linear-gradient(rgba(0, 174, 239, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 174, 239, 0.10) 1px, transparent 1px);
   background-size: 42px 42px;
 }
 
 .sector-grid-dark {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    linear-gradient(rgba(0, 174, 239, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 174, 239, 0.10) 1px, transparent 1px);
   background-size: 42px 42px;
 }
 
 .dot-matrix {
   background-image: radial-gradient(
     circle,
-    rgba(11, 18, 32, 0.24) 1px,
+    rgba(25, 215, 197, 0.20) 1px,
     transparent 1.5px
   );
   background-size: 16px 16px;
@@ -273,8 +308,8 @@ svg {
 }
 
 .card-lift:hover {
-  transform: translateY(-5px);
-  border-color: rgba(37, 71, 208, 0.35);
+  transform: translateY(-3px);
+  border-color: rgba(25, 215, 197, 0.42);
   box-shadow: var(--shadow-lift);
 }
 
@@ -285,7 +320,7 @@ svg {
 }
 
 .prose-devsectors {
-  color: #344051;
+  color: #a9bec6;
   font-size: 1.05rem;
   line-height: 1.85;
 }
@@ -293,7 +328,7 @@ svg {
 .prose-devsectors h2 {
   margin-top: 3.5rem;
   margin-bottom: 1rem;
-  color: var(--color-ink);
+  color: var(--color-ink-soft);
   font-family: var(--font-display);
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 800;
@@ -304,7 +339,7 @@ svg {
 .prose-devsectors h3 {
   margin-top: 2rem;
   margin-bottom: 0.75rem;
-  color: var(--color-ink);
+  color: var(--color-ink-soft);
   font-size: 1.25rem;
   font-weight: 750;
 }
@@ -325,7 +360,7 @@ svg {
 }
 
 .prose-devsectors a {
-  color: var(--color-mineral);
+  color: var(--color-coral);
   font-weight: 700;
   text-decoration: underline;
   text-decoration-thickness: 1px;

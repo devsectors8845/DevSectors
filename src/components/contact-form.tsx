@@ -22,7 +22,7 @@ type FormStatus =
   | { state: "error"; message: string };
 
 const inputClass =
-  "mt-2 min-h-12 w-full rounded-xl border border-muted bg-white px-4 text-[0.95rem] text-ink shadow-sm transition placeholder:text-muted hover:border-ink focus:border-mineral focus:ring-4 focus:ring-mineral/10";
+  "mt-2 min-h-12 w-full rounded-xl border border-line bg-paper px-4 text-[0.95rem] text-ink-soft transition placeholder:text-muted hover:border-coral/60 focus:border-coral focus:ring-4 focus:ring-coral/10";
 
 export function ContactForm({
   serviceOptions,
@@ -110,12 +110,12 @@ export function ContactForm({
         aria-describedby="contact-success-message"
         tabIndex={-1}
       >
-        <span className="flex size-14 items-center justify-center rounded-full bg-ink text-signal">
+        <span className="flex size-14 items-center justify-center rounded-full bg-canvas text-signal">
           <CheckCircle2 aria-hidden="true" className="size-7" />
         </span>
         <h2
           id="contact-success-heading"
-          className="font-display mt-7 text-4xl font-black tracking-[-0.045em] text-ink"
+          className="font-display mt-7 text-4xl font-black tracking-[-0.045em] text-ink-soft"
         >
           Brief received.
         </h2>
@@ -144,7 +144,7 @@ export function ContactForm({
       onSubmit={handleSubmit}
       aria-label="Project enquiry"
       aria-busy={status.state === "submitting"}
-      className={`rounded-[1.5rem] border border-ink/10 bg-paper shadow-soft ${
+      className={`rounded-[1.5rem] border border-line bg-paper shadow-soft ${
         compact ? "p-5 sm:p-7" : "p-5 sm:p-8 lg:p-10"
       }`}
     >
@@ -152,7 +152,7 @@ export function ContactForm({
         Fields marked <span aria-hidden="true">*</span> are required.
       </p>
       <div className="grid gap-5 sm:grid-cols-2">
-        <label className="text-sm font-bold text-ink">
+        <label className="text-sm font-bold text-ink-soft">
           Your name <span aria-hidden="true" className="text-coral-ink">*</span>
           <input
             className={inputClass}
@@ -165,7 +165,7 @@ export function ContactForm({
             required
           />
         </label>
-        <label className="text-sm font-bold text-ink">
+        <label className="text-sm font-bold text-ink-soft">
           Work email <span aria-hidden="true" className="text-coral-ink">*</span>
           <input
             className={inputClass}
@@ -177,7 +177,7 @@ export function ContactForm({
             required
           />
         </label>
-        <label className="text-sm font-bold text-ink">
+        <label className="text-sm font-bold text-ink-soft">
           Phone / WhatsApp
           <input
             className={inputClass}
@@ -188,7 +188,7 @@ export function ContactForm({
             placeholder="Optional"
           />
         </label>
-        <label className="text-sm font-bold text-ink">
+        <label className="text-sm font-bold text-ink-soft">
           Company
           <input
             className={inputClass}
@@ -199,7 +199,7 @@ export function ContactForm({
             placeholder="Company or project name"
           />
         </label>
-        <label className="text-sm font-bold text-ink">
+        <label className="text-sm font-bold text-ink-soft">
           What can we help with?{" "}
           <span aria-hidden="true" className="text-coral-ink">*</span>
           <select
@@ -222,7 +222,7 @@ export function ContactForm({
             <option value="other">Something else</option>
           </select>
         </label>
-        <label className="text-sm font-bold text-ink">
+        <label className="text-sm font-bold text-ink-soft">
           Approximate budget
           <select className={inputClass} name="budget" defaultValue="">
             <option value="">Not decided yet</option>
@@ -232,7 +232,7 @@ export function ContactForm({
             <option value="15k-plus">$15,000+</option>
           </select>
         </label>
-        <label className="text-sm font-bold text-ink">
+        <label className="text-sm font-bold text-ink-soft">
           Current website / product URL
           <input
             className={inputClass}
@@ -244,7 +244,7 @@ export function ContactForm({
             placeholder="https://example.com"
           />
         </label>
-        <label className="text-sm font-bold text-ink">
+        <label className="text-sm font-bold text-ink-soft">
           Ideal timeline
           <select className={inputClass} name="timeline" defaultValue="">
             <option value="">Open / still exploring</option>
@@ -254,7 +254,7 @@ export function ContactForm({
             <option value="later">More than 6 months away</option>
           </select>
         </label>
-        <label className="text-sm font-bold text-ink sm:col-span-2">
+        <label className="text-sm font-bold text-ink-soft sm:col-span-2">
           Tell us about the problem{" "}
           <span aria-hidden="true" className="text-coral-ink">*</span>
           <textarea

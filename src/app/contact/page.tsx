@@ -166,7 +166,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                   href={href}
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel={href.startsWith("http") ? "noreferrer" : undefined}
-                  className="group flex min-h-28 items-start gap-4 rounded-2xl border border-ink/10 bg-white p-5 transition hover:border-mineral/40 hover:shadow-soft"
+                  className="group flex min-h-28 items-start gap-4 rounded-2xl border border-line bg-surface p-5 transition hover:border-mineral/40 hover:shadow-soft"
                 >
                   <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-paper text-mineral">
                     <Icon aria-hidden="true" className="size-5" />
@@ -175,7 +175,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                     <span className="font-mono block text-[0.62rem] font-bold uppercase tracking-[0.14em] text-muted">
                       {label}
                     </span>
-                    <strong className="mt-1.5 block break-words text-base text-ink">
+                    <strong className="mt-1.5 block break-words text-base text-ink-soft">
                       {value}
                     </strong>
                     <span className="mt-1 block text-sm leading-5 text-muted">
@@ -190,12 +190,12 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               ))}
             </div>
 
-            <div className="mt-8 rounded-2xl bg-ink p-6 text-white">
+            <div className="mt-8 rounded-2xl bg-canvas p-6 text-ink-soft">
               <div className="flex items-center gap-3 text-signal">
                 <Clock3 aria-hidden="true" className="size-5" />
                 <strong className="text-sm">Response expectation</strong>
               </div>
-              <p className="mt-3 text-sm leading-6 text-white/65">
+              <p className="mt-3 text-sm leading-6 text-muted">
                 We aim to reply to complete project briefs within two business
                 days. Urgent production support is only available through an
                 existing support agreement.
@@ -235,7 +235,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
               copy: "If a smaller validation step is the responsible choice, that is the recommendation we will make."
             }
           ].map(({ icon: Icon, title, copy }) => (
-            <article key={title} className="border-t border-ink/15 pt-6">
+            <article key={title} className="border-t border-line pt-6">
               <Icon aria-hidden="true" className="size-5 text-mineral" />
               <h2 className="mt-5 text-lg font-extrabold">{title}</h2>
               <p className="mt-3 text-sm leading-6 text-muted">{copy}</p>

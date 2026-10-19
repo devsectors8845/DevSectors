@@ -27,7 +27,7 @@ export function WorkFilter({ items, industries }: WorkFilterProps) {
   return (
     <div>
       <div className="flex flex-col gap-4 border-y border-line py-5 sm:flex-row sm:items-center sm:justify-between">
-        <div className="flex items-center gap-2 text-sm font-extrabold text-ink">
+        <div className="flex items-center gap-2 text-sm font-extrabold text-ink-soft">
           <Filter aria-hidden="true" className="size-4 text-mineral" />
           Filter by sector
         </div>
@@ -42,8 +42,8 @@ export function WorkFilter({ items, industries }: WorkFilterProps) {
             aria-pressed={activeSector === "all"}
             className={`min-h-11 shrink-0 rounded-full border px-4 text-sm font-bold transition-colors ${
               activeSector === "all"
-                ? "border-ink bg-ink text-white"
-                : "border-muted bg-white text-muted hover:border-mineral hover:text-mineral"
+                ? "border-line bg-canvas text-ink-soft"
+                : "border-muted bg-surface text-muted hover:border-mineral hover:text-mineral"
             }`}
           >
             All work
@@ -56,8 +56,8 @@ export function WorkFilter({ items, industries }: WorkFilterProps) {
               aria-pressed={activeSector === industry.slug}
               className={`min-h-11 shrink-0 rounded-full border px-4 text-sm font-bold transition-colors ${
                 activeSector === industry.slug
-                  ? "border-ink bg-ink text-white"
-                  : "border-muted bg-white text-muted hover:border-mineral hover:text-mineral"
+                  ? "border-line bg-canvas text-ink-soft"
+                  : "border-muted bg-surface text-muted hover:border-mineral hover:text-mineral"
               }`}
             >
               {industry.name}
@@ -90,7 +90,7 @@ export function WorkFilter({ items, industries }: WorkFilterProps) {
         </div>
       ) : (
         <div className="mt-6 rounded-[1.2rem] border border-dashed border-line bg-paper p-8 text-center sm:p-12">
-          <p className="text-lg font-extrabold text-ink">
+          <p className="text-lg font-extrabold text-ink-soft">
             No representative scenario is published for this sector yet.
           </p>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-muted">

@@ -15,7 +15,7 @@ export function SectionHeading({
   description,
   align = "left",
   inverse = false,
-  className = ""
+  className = "",
 }: SectionHeadingProps) {
   const centered = align === "center";
 
@@ -29,14 +29,14 @@ export function SectionHeading({
         {eyebrow}
       </span>
       <h2
-        className={`heading-section mt-5 ${inverse ? "text-white" : "text-ink"}`}
+        className={`heading-section mt-5 ${inverse ? "text-ink-soft" : "text-ink-soft"}`}
       >
         {title}
       </h2>
       {description && (
         <p
           className={`mt-6 max-w-2xl text-base leading-7 sm:text-lg ${
-            inverse ? "text-white/65" : "text-muted"
+            inverse ? "text-muted" : "text-muted"
           }`}
         >
           {description}

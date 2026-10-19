@@ -39,10 +39,10 @@ export function ContentInsightFilter({ articles }: ContentInsightFilterProps) {
 
   return (
     <div>
-      <div className="rounded-[1.5rem] border border-line bg-white p-5 shadow-soft sm:p-6">
+      <div className="rounded-[1.5rem] border border-line bg-surface p-5 shadow-soft sm:p-6">
         <div className="grid gap-5 lg:grid-cols-[minmax(16rem,0.7fr)_1.3fr] lg:items-end">
           <div>
-            <label htmlFor="insight-search" className="text-sm font-bold text-ink">
+            <label htmlFor="insight-search" className="text-sm font-bold text-ink-soft">
               Search insights
             </label>
             <div className="relative mt-2">
@@ -57,13 +57,13 @@ export function ContentInsightFilter({ articles }: ContentInsightFilterProps) {
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder="Search a topic or decision"
                 aria-controls="insight-results"
-                className="min-h-12 w-full rounded-full border border-muted bg-canvas py-3 pl-11 pr-11 text-sm text-ink placeholder:text-muted focus:border-mineral"
+                className="min-h-12 w-full rounded-full border border-muted bg-canvas py-3 pl-11 pr-11 text-sm text-ink-soft placeholder:text-muted focus:border-mineral"
               />
               {query && (
                 <button
                   type="button"
                   onClick={() => setQuery("")}
-                  className="absolute right-1.5 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded-full text-muted transition-colors hover:bg-paper hover:text-ink"
+                  className="absolute right-1.5 top-1/2 flex size-9 -translate-y-1/2 items-center justify-center rounded-full text-muted transition-colors hover:bg-paper hover:text-ink-soft"
                 >
                   <X aria-hidden="true" className="size-4" />
                   <span className="sr-only">Clear insight search</span>
@@ -73,7 +73,7 @@ export function ContentInsightFilter({ articles }: ContentInsightFilterProps) {
           </div>
 
           <fieldset>
-            <legend className="text-sm font-bold text-ink">Filter by category</legend>
+            <legend className="text-sm font-bold text-ink-soft">Filter by category</legend>
             <div className="mt-2 flex flex-wrap gap-2">
               {categories.map((item) => {
                 const isActive = item === category;
@@ -86,7 +86,7 @@ export function ContentInsightFilter({ articles }: ContentInsightFilterProps) {
                     onClick={() => setCategory(item)}
                     className={`min-h-11 rounded-full border px-4 py-2 text-sm font-bold transition-colors ${
                       isActive
-                        ? "border-ink bg-ink text-white"
+                        ? "border-line bg-canvas text-ink-soft"
                         : "border-muted bg-canvas text-muted hover:border-mineral hover:text-mineral"
                     }`}
                   >
@@ -101,7 +101,7 @@ export function ContentInsightFilter({ articles }: ContentInsightFilterProps) {
 
       <div className="mt-7 flex items-center justify-between gap-4">
         <p aria-live="polite" className="text-sm text-muted">
-          Showing <strong className="text-ink">{filteredArticles.length}</strong>{" "}
+          Showing <strong className="text-ink-soft">{filteredArticles.length}</strong>{" "}
           {filteredArticles.length === 1 ? "insight" : "insights"}
         </p>
         {(query || category !== "All") && (
@@ -133,7 +133,7 @@ export function ContentInsightFilter({ articles }: ContentInsightFilterProps) {
           id="insight-results"
           className="mt-6 rounded-[1.5rem] border border-dashed border-line bg-canvas px-6 py-16 text-center"
         >
-          <h3 className="text-2xl font-display font-extrabold tracking-[-0.035em] text-ink">
+          <h3 className="text-2xl font-display font-extrabold tracking-[-0.035em] text-ink-soft">
             No insight matches those filters.
           </h3>
           <p className="mx-auto mt-3 max-w-lg text-sm leading-6 text-muted">

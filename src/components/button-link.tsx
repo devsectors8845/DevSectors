@@ -14,7 +14,7 @@ const variants = {
   primary: "button-primary",
   dark: "button-dark",
   outline: "button-outline",
-  "outline-light": "button-outline-light"
+  "outline-light": "button-outline-light",
 };
 
 export function ButtonLink({
@@ -22,7 +22,7 @@ export function ButtonLink({
   children,
   variant = "primary",
   className = "",
-  arrow = true
+  arrow = true,
 }: ButtonLinkProps) {
   const content = (
     <>

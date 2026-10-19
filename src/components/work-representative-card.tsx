@@ -22,8 +22,8 @@ export function WorkRepresentativeCard({
     <article
       className={`card-lift group flex h-full flex-col overflow-hidden rounded-[1.35rem] border p-6 sm:p-8 ${
         inverse
-          ? "border-white/10 bg-ink-soft text-white"
-          : "border-line bg-white text-ink shadow-soft"
+          ? "border-line bg-surface-2 text-ink-soft"
+          : "border-line bg-surface text-ink-soft shadow-soft"
       }`}
     >
       <div className="flex flex-wrap items-center justify-between gap-4">
@@ -39,7 +39,7 @@ export function WorkRepresentativeCard({
         </span>
         <span
           className={`font-mono text-[0.65rem] font-bold tracking-[0.16em] ${
-            inverse ? "text-white/55" : "text-muted"
+            inverse ? "text-muted" : "text-muted"
           }`}
         >
           WORK / {sequence}
@@ -48,7 +48,7 @@ export function WorkRepresentativeCard({
 
       <p
         className={`mt-7 font-mono text-[0.65rem] font-bold uppercase tracking-[0.14em] ${
-          inverse ? "text-white/50" : "text-mineral"
+          inverse ? "text-muted" : "text-mineral"
         }`}
       >
         {industryName} · Anonymized scenario
@@ -58,7 +58,7 @@ export function WorkRepresentativeCard({
       </h3>
       <p
         className={`mt-5 max-w-xl text-[0.97rem] leading-7 ${
-          inverse ? "text-white/65" : "text-muted"
+          inverse ? "text-muted" : "text-muted"
         }`}
       >
         {item.summary}
@@ -66,7 +66,7 @@ export function WorkRepresentativeCard({
 
       <div
         className={`mt-8 flex items-start gap-3 border-t pt-5 text-sm leading-6 ${
-          inverse ? "border-white/10 text-white/55" : "border-line text-muted"
+          inverse ? "border-line text-muted" : "border-line text-muted"
         }`}
       >
         <Eye aria-hidden="true" className="mt-1 size-4 shrink-0" />

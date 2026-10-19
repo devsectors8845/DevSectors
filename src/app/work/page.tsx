@@ -75,11 +75,11 @@ export default function WorkPage() {
 
       <section className="content-shell pt-16 sm:pt-20">
         <div className="grid gap-6 rounded-[1.35rem] border border-mineral/15 bg-mist/65 p-6 sm:p-8 lg:grid-cols-[auto_1fr] lg:items-start lg:gap-8">
-          <span className="inline-flex w-fit rounded-full bg-mineral px-4 py-2 font-mono text-[0.65rem] font-bold uppercase tracking-[0.13em] text-white">
+          <span className="inline-flex w-fit rounded-full bg-mineral px-4 py-2 font-mono text-[0.65rem] font-bold uppercase tracking-[0.13em] text-ink-soft">
             Disclosure
           </span>
           <div>
-            <h2 className="text-xl font-extrabold leading-7 text-ink">
+            <h2 className="text-xl font-extrabold leading-7 text-ink-soft">
               Representative and anonymized by design.
             </h2>
             <p className="mt-3 max-w-4xl leading-7 text-muted">
@@ -101,7 +101,7 @@ export default function WorkPage() {
       </section>
 
       <section className="wide-shell">
-        <div className="sector-grid-dark overflow-hidden rounded-[1.35rem] bg-ink text-white sm:rounded-[2rem]">
+        <div className="sector-grid-dark overflow-hidden rounded-[1.35rem] bg-canvas text-ink-soft sm:rounded-[2rem]">
           <div className="content-shell section-pad">
             <SectionHeading
               eyebrow="How to read the work"
@@ -130,15 +130,15 @@ export default function WorkPage() {
                   copy: "A concrete view of what the engagement might produce, separated from any unverified outcome claim.",
                 },
               ].map(({ icon: Icon, label, title: itemTitle, copy }) => (
-                <article key={label} className="rounded-[1.2rem] border border-white/10 bg-white/5 p-6 sm:p-8">
+                <article key={label} className="rounded-[1.2rem] border border-line bg-surface/5 p-6 sm:p-8">
                   <div className="flex items-center justify-between gap-4">
                     <Icon aria-hidden="true" className="size-5 text-signal" />
-                    <span className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.14em] text-white/55">
+                    <span className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.14em] text-muted">
                       {label}
                     </span>
                   </div>
-                  <h3 className="mt-12 text-xl font-extrabold leading-7 text-white">{itemTitle}</h3>
-                  <p className="mt-4 text-sm leading-7 text-white/60">{copy}</p>
+                  <h3 className="mt-12 text-xl font-extrabold leading-7 text-ink-soft">{itemTitle}</h3>
+                  <p className="mt-4 text-sm leading-7 text-muted">{copy}</p>
                 </article>
               ))}
             </div>
@@ -164,7 +164,7 @@ export default function WorkPage() {
                 "The behavior or outcome worth changing",
                 "The constraints that cannot be ignored",
               ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-sm font-bold leading-6 text-ink">
+                <li key={item} className="flex items-start gap-3 text-sm font-bold leading-6 text-ink-soft">
                   <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-[2px] bg-mineral" />
                   {item}
                 </li>

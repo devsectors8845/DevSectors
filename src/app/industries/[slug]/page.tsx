@@ -156,7 +156,7 @@ export default async function IndustryDetailPage({ params }: IndustryPageProps) 
             {industry.commonChallenges.map((challenge, index) => (
               <li
                 key={challenge}
-                className="flex min-h-48 flex-col rounded-[1.2rem] border border-line bg-white p-6 shadow-soft sm:p-7"
+                className="flex min-h-48 flex-col rounded-[1.2rem] border border-line bg-surface p-6 shadow-soft sm:p-7"
               >
                 <span className="flex items-center justify-between gap-4">
                   <AlertCircle aria-hidden="true" className="size-5 text-coral-ink" />
@@ -164,7 +164,7 @@ export default async function IndustryDetailPage({ params }: IndustryPageProps) 
                     PRESSURE / {String(index + 1).padStart(2, "0")}
                   </span>
                 </span>
-                <p className="mt-auto pt-10 text-base font-bold leading-7 text-ink">{challenge}</p>
+                <p className="mt-auto pt-10 text-base font-bold leading-7 text-ink-soft">{challenge}</p>
               </li>
             ))}
           </ul>
@@ -172,7 +172,7 @@ export default async function IndustryDetailPage({ params }: IndustryPageProps) 
       </section>
 
       <section className="wide-shell">
-        <div className="sector-grid-dark overflow-hidden rounded-[1.35rem] bg-mineral text-white sm:rounded-[2rem]">
+        <div className="sector-grid-dark overflow-hidden rounded-[1.35rem] bg-mineral text-ink-soft sm:rounded-[2rem]">
           <div className="content-shell section-pad">
             <SectionHeading
               eyebrow="Solution focus"
@@ -180,14 +180,14 @@ export default async function IndustryDetailPage({ params }: IndustryPageProps) 
               description="These are useful starting points for investigation, not a pre-sold feature package. We test the priority and scope with your team before recommending a build."
               inverse
             />
-            <ul className="mt-12 grid gap-px overflow-hidden rounded-[1.25rem] border border-white/15 bg-white/15 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+            <ul className="mt-12 grid gap-px overflow-hidden rounded-[1.25rem] border border-line bg-surface/15 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
               {industry.solutionFocus.map((focus, index) => (
                 <li key={focus} className="min-h-56 bg-mineral-dark p-6 sm:p-7">
                   <span className="font-mono text-[0.65rem] font-bold tracking-[0.16em] text-signal">
                     FOCUS / {String(index + 1).padStart(2, "0")}
                   </span>
                   <Check aria-hidden="true" className="mt-12 size-5 text-signal" />
-                  <p className="mt-5 text-lg font-extrabold leading-7 text-white">{focus}</p>
+                  <p className="mt-5 text-lg font-extrabold leading-7 text-ink-soft">{focus}</p>
                 </li>
               ))}
             </ul>
@@ -250,7 +250,7 @@ export default async function IndustryDetailPage({ params }: IndustryPageProps) 
           <div className="flex flex-col gap-8 rounded-[1.35rem] border border-line bg-paper p-7 sm:flex-row sm:items-center sm:justify-between sm:p-10">
             <div className="max-w-2xl">
               <span className="eyebrow text-mineral">Your context first</span>
-              <h2 className="mt-5 font-display text-3xl font-extrabold tracking-[-0.04em] text-ink sm:text-4xl">
+              <h2 className="mt-5 font-display text-3xl font-extrabold tracking-[-0.04em] text-ink-soft sm:text-4xl">
                 No generic case study stands in for your operation.
               </h2>
               <p className="mt-4 leading-7 text-muted">
@@ -259,7 +259,7 @@ export default async function IndustryDetailPage({ params }: IndustryPageProps) 
             </div>
             <Link
               href="/contact"
-              className="inline-flex min-h-13 shrink-0 items-center gap-3 rounded-full bg-ink px-6 text-sm font-extrabold text-white no-underline transition-colors hover:bg-mineral"
+              className="inline-flex min-h-13 shrink-0 items-center gap-3 rounded-full bg-canvas px-6 text-sm font-extrabold text-ink-soft no-underline transition-colors hover:bg-mineral"
             >
               Share your context
               <ArrowRight aria-hidden="true" className="size-4" />

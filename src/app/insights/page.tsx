@@ -102,11 +102,11 @@ export default function InsightsPage() {
             ["Decisions over tools", "Technology appears in context, after the workflow, risk, and operating model are understood."],
             ["Useful over frequent", "We publish when a topic deserves a complete explanation, not to manufacture an activity stream."],
           ].map(([title, description], index) => (
-            <article key={title} className="border-t-2 border-ink pt-6">
+            <article key={title} className="border-t-2 border-line pt-6">
               <span className="font-mono text-xs font-bold text-mineral">
                 0{index + 1}
               </span>
-              <h2 className="mt-6 text-2xl font-display font-extrabold tracking-[-0.035em] text-ink">
+              <h2 className="mt-6 text-2xl font-display font-extrabold tracking-[-0.035em] text-ink-soft">
                 {title}
               </h2>
               <p className="mt-4 text-sm leading-6 text-muted">{description}</p>

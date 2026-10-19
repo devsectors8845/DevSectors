@@ -39,6 +39,8 @@ export const metadata: Metadata = withSocialImage({
   icons: {
     icon: "/favicon.svg",
   },
+  themeColor: "#00151C",
+  colorScheme: "dark",
 });
 
 const organizationId = `${identity.url}/#organization`;
@@ -81,7 +83,7 @@ export default function RootLayout({ children }: Readonly<{ children: ReactNode 
       <body>
         <a
           href="#main-content"
-          className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:not-sr-only focus:rounded-full focus:bg-signal focus:px-5 focus:py-3 focus:text-sm focus:font-bold focus:text-ink focus:shadow-xl"
+          className="sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:not-sr-only focus:rounded-full focus:bg-signal focus:px-5 focus:py-3 focus:text-sm focus:font-bold focus:text-[#062833] focus:shadow-xl"
         >
           Skip to main content
         </a>

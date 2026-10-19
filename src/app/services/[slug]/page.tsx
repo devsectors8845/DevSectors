@@ -140,12 +140,12 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
         <div className="grid gap-14 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
           <div>
             <span className="eyebrow text-mineral">Capability brief</span>
-            <h2 className="mt-6 font-display text-4xl font-extrabold leading-[0.98] tracking-[-0.045em] text-ink sm:text-5xl">
+            <h2 className="mt-6 font-display text-4xl font-extrabold leading-[0.98] tracking-[-0.045em] text-ink-soft sm:text-5xl">
               Built around the work, not a feature checklist.
             </h2>
           </div>
           <div>
-            <p className="max-w-3xl text-xl leading-9 text-ink sm:text-2xl sm:leading-10">
+            <p className="max-w-3xl text-xl leading-9 text-ink-soft sm:text-2xl sm:leading-10">
               {service.overview}
             </p>
             <ul className="mt-10 grid gap-3 sm:grid-cols-2" aria-label="Service capabilities">
@@ -155,7 +155,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   className="flex min-h-24 items-start gap-4 rounded-xl border border-line bg-paper/55 p-5"
                 >
                   <Check aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-mineral" />
-                  <span className="text-sm font-bold leading-6 text-ink">{capability}</span>
+                  <span className="text-sm font-bold leading-6 text-ink-soft">{capability}</span>
                 </li>
               ))}
             </ul>
@@ -164,7 +164,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       </section>
 
       <section className="wide-shell">
-        <div className="sector-grid-dark overflow-hidden rounded-[1.35rem] bg-ink text-white sm:rounded-[2rem]">
+        <div className="sector-grid-dark overflow-hidden rounded-[1.35rem] bg-canvas text-ink-soft sm:rounded-[2rem]">
           <div className="content-shell section-pad grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             <SectionHeading
               eyebrow="Useful outcomes"
@@ -172,13 +172,13 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               description="Outcomes are direction, not invented guarantees. We agree measurable acceptance criteria once the operating context and baseline are understood."
               inverse
             />
-            <ul className="grid gap-px overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/10 sm:grid-cols-2">
+            <ul className="grid gap-px overflow-hidden rounded-[1.25rem] border border-line bg-surface/10 sm:grid-cols-2">
               {service.outcomes.map((outcome, index) => (
-                <li key={outcome} className="min-h-48 bg-ink-soft p-6 sm:p-7">
+                <li key={outcome} className="min-h-48 bg-surface-2 p-6 sm:p-7">
                   <span className="font-mono text-[0.65rem] font-bold tracking-[0.16em] text-signal">
                     OUT / {String(index + 1).padStart(2, "0")}
                   </span>
-                  <p className="mt-10 text-lg font-bold leading-7 text-white">{outcome}</p>
+                  <p className="mt-10 text-lg font-bold leading-7 text-ink-soft">{outcome}</p>
                 </li>
               ))}
             </ul>
@@ -197,19 +197,19 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           {service.process.map((processStep, index) => (
             <li
               key={processStep.step}
-              className="relative rounded-[1.2rem] border border-line bg-white p-6 shadow-soft sm:p-7"
+              className="relative rounded-[1.2rem] border border-line bg-surface p-6 shadow-soft sm:p-7"
             >
               <span className="font-mono text-xs font-bold tracking-[0.18em] text-mineral">
                 STEP / {String(processStep.step).padStart(2, "0")}
               </span>
-              <h3 className="mt-10 text-xl font-extrabold leading-6 text-ink">
+              <h3 className="mt-10 text-xl font-extrabold leading-6 text-ink-soft">
                 {processStep.title}
               </h3>
               <p className="mt-4 text-sm leading-7 text-muted">{processStep.description}</p>
               {index < service.process.length - 1 && (
                 <CornerDownRight
                   aria-hidden="true"
-                  className="absolute -bottom-3 right-6 z-10 size-6 rounded-full bg-signal p-1 text-ink lg:-right-3 lg:bottom-auto lg:top-7"
+                  className="absolute -bottom-3 right-6 z-10 size-6 rounded-full bg-signal p-1 text-ink-soft lg:-right-3 lg:bottom-auto lg:top-7"
                 />
               )}
             </li>
@@ -230,13 +230,13 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 <Link
                   key={industry.slug}
                   href={`/industries/${industry.slug}`}
-                  className="group flex min-h-44 flex-col justify-between rounded-[1.15rem] border border-line bg-white p-6 no-underline transition-colors hover:border-mineral/30 hover:bg-mist/50"
+                  className="group flex min-h-44 flex-col justify-between rounded-[1.15rem] border border-line bg-surface p-6 no-underline transition-colors hover:border-mineral/30 hover:bg-mist/50"
                 >
                   <span className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.14em] text-mineral">
                     Related sector
                   </span>
                   <span className="mt-8 flex items-end justify-between gap-4">
-                    <strong className="max-w-[14rem] text-lg leading-6 text-ink">
+                    <strong className="max-w-[14rem] text-lg leading-6 text-ink-soft">
                       {industry.name}
                     </strong>
                     <ArrowRight

@@ -31,7 +31,7 @@ export function IndustrySectorCard({ industry, index }: IndustrySectorCardProps)
   const sequence = String(index + 1).padStart(2, "0");
 
   return (
-    <article className="focus-frame group relative min-h-[24rem] overflow-hidden rounded-[1.35rem] border border-white/10 bg-ink text-white shadow-soft">
+    <article className="focus-frame group relative min-h-[24rem] overflow-hidden rounded-[1.35rem] border border-line bg-canvas text-ink-soft shadow-soft">
       <div className="sector-grid-dark absolute inset-0 opacity-70" aria-hidden="true" />
       <div
         className="absolute -right-8 -top-8 size-36 rounded-full border-[28px] border-signal/10 transition-transform duration-500 group-hover:scale-110"
@@ -43,10 +43,10 @@ export function IndustrySectorCard({ industry, index }: IndustrySectorCardProps)
         aria-label={`Explore digital solutions for ${industry.name}`}
       >
         <div className="flex items-center justify-between gap-4">
-          <span className="flex size-11 items-center justify-center rounded-xl border border-white/15 bg-white/5 text-signal">
+          <span className="flex size-11 items-center justify-center rounded-xl border border-line bg-surface/5 text-signal">
             <Icon aria-hidden="true" className="size-5" />
           </span>
-          <span className="font-mono text-[0.68rem] font-bold tracking-[0.18em] text-white/55">
+          <span className="font-mono text-[0.68rem] font-bold tracking-[0.18em] text-muted">
             SECTOR / {sequence}
           </span>
         </div>
@@ -58,7 +58,7 @@ export function IndustrySectorCard({ industry, index }: IndustrySectorCardProps)
           <h3 className="mt-4 max-w-md font-display text-[2.15rem] font-extrabold leading-[0.98] tracking-[-0.045em] sm:text-[2.6rem]">
             {industry.name}
           </h3>
-          <p className="mt-5 max-w-xl text-[0.95rem] leading-7 text-white/65">
+          <p className="mt-5 max-w-xl text-[0.95rem] leading-7 text-muted">
             {industry.shortDescription}
           </p>
           <span className="mt-7 inline-flex items-center gap-3 text-sm font-extrabold text-signal">

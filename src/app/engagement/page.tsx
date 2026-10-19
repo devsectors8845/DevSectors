@@ -123,7 +123,7 @@ export default function EngagementPage() {
               terms for a confirmed engagement.
             </p>
             <div className="mt-8 rounded-[1.25rem] border border-signal-dark/30 bg-signal/20 p-5">
-              <p className="flex gap-3 text-sm font-semibold leading-6 text-ink">
+              <p className="flex gap-3 text-sm font-semibold leading-6 text-ink-soft">
                 <Check aria-hidden="true" className="mt-1 size-4 shrink-0" />
                 No invented monthly plan, hidden checkout, or universal project
                 price is presented as a substitute for scope.
@@ -161,7 +161,7 @@ export default function EngagementPage() {
               return (
                 <article
                   key={principle.title}
-                  className="rounded-[1.5rem] border border-line bg-white p-6 shadow-soft sm:p-8"
+                  className="rounded-[1.5rem] border border-line bg-surface p-6 shadow-soft sm:p-8"
                 >
                   <div className="flex items-center justify-between gap-4">
                     <span className="flex size-11 items-center justify-center rounded-xl bg-mist text-mineral">
@@ -171,7 +171,7 @@ export default function EngagementPage() {
                       0{index + 1}
                     </span>
                   </div>
-                  <h3 className="mt-7 text-2xl font-display font-extrabold tracking-[-0.035em] text-ink">
+                  <h3 className="mt-7 text-2xl font-display font-extrabold tracking-[-0.035em] text-ink-soft">
                     {principle.title}
                   </h3>
                   <p className="mt-4 text-sm leading-6 text-muted">

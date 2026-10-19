@@ -1,5 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DevSectors">
-  <rect width="64" height="64" rx="16" fill="#0B1220"/>
-  <path d="M15 16h17c11 0 18 6 18 16S43 48 32 48H15V16Zm10 9v14h7c5 0 8-2 8-7s-3-7-8-7h-7Z" fill="#C7F36B"/>
-  <path d="M48 13h4v10h-4zM43 18h14v4H43z" fill="#FF6B4A"/>
+  <defs>
+    <linearGradient id="dsMark" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8EEB4D" />
+      <stop offset="48%" stop-color="#19D7C5" />
+      <stop offset="100%" stop-color="#00AEEF" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#dsMark)" />
+  <path d="M15 16h17c11 0 18 6 18 16S43 48 32 48H15V16Zm10 9v14h7c5 0 8-2 8-7s-3-7-8-7h-7Z" fill="#00151C" />
+  <path d="M48 13h4v10h-4zM43 18h14v4H43z" fill="#00151C" />
 </svg>

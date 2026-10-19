@@ -99,11 +99,11 @@ export default function CoursesPage() {
             const Icon = principle.icon;
 
             return (
-              <article key={principle.title} className="border-t-2 border-ink pt-6">
+              <article key={principle.title} className="border-t-2 border-line pt-6">
                 <span className="flex size-11 items-center justify-center rounded-xl bg-mist text-mineral">
                   <Icon aria-hidden="true" className="size-5" />
                 </span>
-                <h2 className="mt-6 text-2xl font-display font-extrabold tracking-[-0.035em] text-ink">
+                <h2 className="mt-6 text-2xl font-display font-extrabold tracking-[-0.035em] text-ink-soft">
                   {principle.title}
                 </h2>
                 <p className="mt-4 text-sm leading-6 text-muted">
@@ -130,12 +130,12 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      <section className="section-pad">
+      {/* <section className="section-pad">
         <div className="content-shell">
           <div className="relative overflow-hidden rounded-[1.5rem] border border-coral/30 bg-coral/[0.07] p-6 sm:p-10 lg:grid lg:grid-cols-[0.72fr_1.28fr] lg:gap-16">
             <span className="eyebrow h-fit text-coral-ink">Before you enroll</span>
             <div>
-              <h2 className="text-3xl font-display font-extrabold leading-none tracking-[-0.04em] text-ink sm:text-4xl">
+              <h2 className="text-3xl font-display font-extrabold leading-none tracking-[-0.04em] text-ink-soft sm:text-4xl">
                 A course page is not a live enrollment offer.
               </h2>
               <p className="mt-5 max-w-3xl text-base leading-7 text-muted">
@@ -150,7 +150,7 @@ export default function CoursesPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <CtaBand
         eyebrow="Not sure where to begin?"

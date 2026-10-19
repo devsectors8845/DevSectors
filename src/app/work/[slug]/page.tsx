@@ -155,14 +155,14 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
 
       <section className="content-shell pt-12 sm:pt-16">
         <div className="grid gap-5 rounded-[1.35rem] border border-coral/20 bg-coral/10 p-6 sm:grid-cols-[auto_1fr] sm:items-start sm:p-8">
-          <span className="flex size-11 items-center justify-center rounded-xl bg-coral text-white">
+          <span className="flex size-11 items-center justify-center rounded-xl bg-coral text-ink-soft">
             <ShieldCheck aria-hidden="true" className="size-5" />
           </span>
           <div>
             <p className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.15em] text-coral-ink">
               Representative engagement disclosure
             </p>
-            <p className="mt-3 max-w-4xl text-base font-bold leading-7 text-ink">{item.disclosure}</p>
+            <p className="mt-3 max-w-4xl text-base font-bold leading-7 text-ink-soft">{item.disclosure}</p>
           </div>
         </div>
       </section>
@@ -171,7 +171,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
         <div className="grid gap-12 lg:grid-cols-[0.72fr_1.28fr] lg:gap-20">
           <div>
             <span className="eyebrow text-mineral">The scenario</span>
-            <h2 className="mt-6 font-display text-4xl font-extrabold leading-[0.98] tracking-[-0.045em] text-ink sm:text-5xl">
+            <h2 className="mt-6 font-display text-4xl font-extrabold leading-[0.98] tracking-[-0.045em] text-ink-soft sm:text-5xl">
               Understand the operating problem before proposing the product.
             </h2>
             {industry && (
@@ -187,7 +187,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
               </Link>
             )}
           </div>
-          <blockquote className="m-0 rounded-[1.35rem] border border-line bg-paper p-7 text-xl font-bold leading-9 text-ink sm:p-10 sm:text-2xl sm:leading-10">
+          <blockquote className="m-0 rounded-[1.35rem] border border-line bg-paper p-7 text-xl font-bold leading-9 text-ink-soft sm:p-10 sm:text-2xl sm:leading-10">
             <Eye aria-hidden="true" className="mb-8 size-6 text-mineral" />
             <p>{item.scenario}</p>
           </blockquote>
@@ -195,7 +195,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
       </section>
 
       <section className="wide-shell">
-        <div className="sector-grid-dark overflow-hidden rounded-[1.35rem] bg-ink text-white sm:rounded-[2rem]">
+        <div className="sector-grid-dark overflow-hidden rounded-[1.35rem] bg-canvas text-ink-soft sm:rounded-[2rem]">
           <div className="content-shell section-pad">
             <SectionHeading
               eyebrow="Proposed approach"
@@ -203,13 +203,13 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
               description="This is an illustrative approach for the scenario, not a claim that the work was delivered for an identified client."
               inverse
             />
-            <ol className="mt-12 grid gap-px overflow-hidden rounded-[1.25rem] border border-white/10 bg-white/10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
+            <ol className="mt-12 grid gap-px overflow-hidden rounded-[1.25rem] border border-line bg-surface/10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-4">
               {item.approach.map((step, index) => (
-                <li key={step} className="min-h-64 bg-ink-soft p-6 sm:p-7">
+                <li key={step} className="min-h-64 bg-surface-2 p-6 sm:p-7">
                   <span className="font-mono text-[0.65rem] font-bold tracking-[0.16em] text-signal">
                     STEP / {String(index + 1).padStart(2, "0")}
                   </span>
-                  <p className="mt-16 text-lg font-extrabold leading-7 text-white">{step}</p>
+                  <p className="mt-16 text-lg font-extrabold leading-7 text-ink-soft">{step}</p>
                 </li>
               ))}
             </ol>
@@ -227,7 +227,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
             />
             <ul className="mt-9 divide-y divide-line border-y border-line">
               {item.deliverables.map((deliverable) => (
-                <li key={deliverable} className="flex items-center gap-4 py-5 text-base font-bold text-ink">
+                <li key={deliverable} className="flex items-center gap-4 py-5 text-base font-bold text-ink-soft">
                   <PackageCheck aria-hidden="true" className="size-5 shrink-0 text-mineral" />
                   {deliverable}
                 </li>
@@ -237,7 +237,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
 
           <div className="rounded-[1.35rem] bg-mist p-7 sm:p-10">
             <span className="eyebrow text-mineral">Intended value</span>
-            <h2 className="mt-6 font-display text-4xl font-extrabold leading-[0.98] tracking-[-0.045em] text-ink sm:text-5xl">
+            <h2 className="mt-6 font-display text-4xl font-extrabold leading-[0.98] tracking-[-0.045em] text-ink-soft sm:text-5xl">
               Direction to validate, not results already achieved.
             </h2>
             <p className="mt-6 text-sm leading-7 text-muted">
@@ -245,7 +245,7 @@ export default async function WorkDetailPage({ params }: WorkDetailPageProps) {
             </p>
             <ul className="mt-8 space-y-3">
               {item.intendedValue.map((value) => (
-                <li key={value} className="flex items-start gap-4 rounded-xl bg-white/75 p-5 text-sm font-bold leading-6 text-ink">
+                <li key={value} className="flex items-start gap-4 rounded-xl bg-surface/75 p-5 text-sm font-bold leading-6 text-ink-soft">
                   <Check aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-mineral" />
                   {value}
                 </li>

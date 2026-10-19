@@ -11,22 +11,22 @@ type PageHeroProps = {
 
 const themes = {
   ink: {
-    section: "bg-ink text-white sector-grid-dark",
+    section: "bg-canvas text-ink-soft sector-grid-dark",
     eyebrow: "text-signal",
-    copy: "text-white/68",
-    marker: "border-white/15 text-white/55"
+    copy: "text-muted",
+    marker: "border-line text-muted"
   },
   paper: {
-    section: "bg-paper text-ink sector-grid",
-    eyebrow: "text-mineral",
+    section: "bg-surface text-ink-soft sector-grid-dark",
+    eyebrow: "text-coral",
     copy: "text-muted",
-    marker: "border-ink/12 text-muted"
+    marker: "border-line text-muted"
   },
   mineral: {
-    section: "bg-mineral text-white sector-grid-dark",
+    section: "bg-gradient-to-br from-surface-2 via-surface to-canvas text-ink-soft sector-grid-dark",
     eyebrow: "text-signal",
-    copy: "text-white/75",
-    marker: "border-white/20 text-white/55"
+    copy: "text-muted",
+    marker: "border-line text-muted"
   }
 };
 

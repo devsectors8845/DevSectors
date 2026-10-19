@@ -179,10 +179,10 @@ export function ProjectPlanner() {
   }
 
   return (
-    <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-white text-ink shadow-2xl">
+    <div className="overflow-hidden rounded-[1.75rem] border border-black/10 bg-white text-[#062833] shadow-2xl">
       <div className="grid lg:grid-cols-[16rem_1fr]">
         <aside
-          className="sector-grid bg-ink p-6 text-white sm:p-8"
+          className="sector-grid-dark bg-surface-2 p-6 text-ink-soft sm:p-8"
           aria-labelledby="planner-overview-heading"
         >
           <span className="eyebrow text-signal">Project fit</span>
@@ -192,7 +192,7 @@ export function ProjectPlanner() {
           >
             Build a useful starting brief.
           </h3>
-          <p className="mt-4 text-sm leading-6 text-white/55">
+          <p className="mt-4 text-sm leading-6 text-[#8fa8b0]">
             Three decisions. About one minute. No account or email required.
           </p>
 
@@ -206,17 +206,17 @@ export function ProjectPlanner() {
                   aria-current={active ? "step" : undefined}
                   className={`flex items-center gap-3 rounded-xl border p-3 text-sm ${
                     active
-                      ? "border-signal/60 bg-signal/10 text-white"
-                      : "border-white/10 text-white/55"
+                      ? "border-signal/60 bg-signal/10 text-ink-soft"
+                      : "border-black/10 text-[#6f8d97]"
                   }`}
                 >
                   <span
                     className={`flex size-7 shrink-0 items-center justify-center rounded-full font-mono text-[0.65rem] font-bold ${
                       complete
-                        ? "bg-signal text-ink"
+                        ? "bg-signal text-[#062833]"
                         : active
                           ? "border border-signal text-signal"
-                          : "border border-white/20"
+                          : "border border-line"
                     }`}
                   >
                     {complete ? <Check aria-hidden="true" className="size-4" /> : index + 1}
@@ -237,7 +237,7 @@ export function ProjectPlanner() {
           {!finished ? (
             <div className="flex h-full flex-col">
               <div>
-                <span className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.16em] text-mineral">
+                <span className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#0a5b70]">
                   {step.eyebrow}
                 </span>
                 <h3
@@ -265,8 +265,8 @@ export function ProjectPlanner() {
                       onClick={() => choose(option.value)}
                       className={`min-h-32 rounded-2xl border p-5 text-left transition ${
                         selected
-                          ? "border-mineral bg-mist/55 ring-4 ring-mineral/10"
-                          : "border-muted bg-canvas hover:border-ink hover:bg-paper"
+                          ? "border-transparent bg-gradient-to-br from-signal/25 via-coral/20 to-mineral/25 shadow-[0_0_0_2px_#19d7c5]"
+                          : "border-black/10 bg-white hover:border-[#19d7c5]/60 hover:bg-[#f3f7fa]"
                       }`}
                     >
                       <span className="flex items-start justify-between gap-3">
@@ -274,14 +274,14 @@ export function ProjectPlanner() {
                         <span
                           className={`flex size-5 shrink-0 items-center justify-center rounded-full border ${
                             selected
-                              ? "border-mineral bg-mineral text-white"
+                              ? "border-[#00aeef] bg-[#00aeef] text-white"
                               : "border-ink/20"
                           }`}
                         >
                           {selected && <Check aria-hidden="true" className="size-3" />}
                         </span>
                       </span>
-                      <span className="mt-3 block text-sm leading-6 text-muted">
+                      <span className="mt-3 block text-sm leading-6 text-[#3c5a64]">
                         {option.description}
                       </span>
                     </button>
@@ -312,10 +312,10 @@ export function ProjectPlanner() {
             </div>
           ) : (
             <div className="flex h-full flex-col justify-center">
-              <span className="flex size-12 items-center justify-center rounded-full bg-signal text-ink">
+              <span className="flex size-12 items-center justify-center rounded-full bg-signal text-[#062833]">
                 <Sparkles aria-hidden="true" className="size-5" />
               </span>
-              <span className="font-mono mt-8 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-mineral">
+              <span className="font-mono mt-8 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#0a5b70]">
                 Suggested starting point
               </span>
               <h3
@@ -325,14 +325,14 @@ export function ProjectPlanner() {
               >
                 {recommendation.title}
               </h3>
-              <p className="mt-5 max-w-xl text-lg leading-8 text-muted">
+              <p className="mt-5 max-w-xl text-lg leading-8 text-[#3c5a64]">
                 {recommendation.summary}
               </p>
 
               <dl className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
                 {(["goal", "stage", "pace"] as const).map((key) => (
-                  <div key={key} className="rounded-xl bg-paper p-4">
-                    <dt className="font-mono text-[0.58rem] font-bold uppercase tracking-wider text-muted">
+                  <div key={key} className="rounded-xl bg-[#e8edf0] p-4">
+                    <dt className="font-mono text-[0.58rem] font-bold uppercase tracking-wider text-[#6f8d97]">
                       {key === "goal" ? "Outcome" : key === "stage" ? "Stage" : "Pace"}
                     </dt>
                     <dd className="mt-2 text-sm font-bold leading-5">

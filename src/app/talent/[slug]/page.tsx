@@ -141,7 +141,7 @@ export default async function TalentRolePage({ params }: TalentRolePageProps) {
             />
             <div className="mt-10 grid gap-10 md:grid-cols-2">
               <div>
-                <h3 className="text-2xl font-display font-extrabold tracking-[-0.035em] text-ink">
+                <h3 className="text-2xl font-display font-extrabold tracking-[-0.035em] text-ink-soft">
                   Relevant responsibilities
                 </h3>
                 <ul className="mt-6 space-y-4">
@@ -160,14 +160,14 @@ export default async function TalentRolePage({ params }: TalentRolePageProps) {
                 </ul>
               </div>
               <div>
-                <h3 className="text-2xl font-display font-extrabold tracking-[-0.035em] text-ink">
+                <h3 className="text-2xl font-display font-extrabold tracking-[-0.035em] text-ink-soft">
                   Useful skills
                 </h3>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {role.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink shadow-soft"
+                      className="rounded-full border border-line bg-surface px-4 py-2 text-sm font-semibold text-ink-soft shadow-soft"
                     >
                       {skill}
                     </span>
@@ -191,7 +191,7 @@ export default async function TalentRolePage({ params }: TalentRolePageProps) {
                   className="mt-1 size-6 shrink-0 text-coral-ink"
                 />
                 <div>
-                  <h3 className="text-2xl font-display font-extrabold tracking-[-0.035em] text-ink">
+                  <h3 className="text-2xl font-display font-extrabold tracking-[-0.035em] text-ink-soft">
                     What an expression of interest means
                   </h3>
                   <p className="mt-3 text-sm leading-6 text-muted">

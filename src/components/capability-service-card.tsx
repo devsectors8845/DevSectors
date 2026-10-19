@@ -36,14 +36,14 @@ export function CapabilityServiceCard({
   const sequence = String(index + 1).padStart(2, "0");
 
   return (
-    <article className="card-lift group relative flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-line bg-white shadow-soft">
+    <article className="card-lift group relative flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-line bg-surface shadow-soft">
       <Link
         href={`/services/${service.slug}`}
         className="flex h-full flex-col p-6 no-underline sm:p-8"
         aria-label={`Explore ${service.name}`}
       >
         <div className="flex items-start justify-between gap-5">
-          <span className="flex size-12 items-center justify-center rounded-xl bg-mist text-mineral transition-colors group-hover:bg-mineral group-hover:text-white">
+          <span className="flex size-12 items-center justify-center rounded-xl bg-mist text-mineral transition-colors group-hover:bg-mineral group-hover:text-ink-soft">
             <Icon aria-hidden="true" className="size-5" />
           </span>
           <span className="font-mono text-[0.68rem] font-bold tracking-[0.18em] text-muted">
@@ -51,7 +51,7 @@ export function CapabilityServiceCard({
           </span>
         </div>
 
-        <h3 className="mt-8 max-w-md font-display text-[1.85rem] font-extrabold leading-[1.02] tracking-[-0.04em] text-ink sm:text-[2.15rem]">
+        <h3 className="mt-8 max-w-md font-display text-[1.85rem] font-extrabold leading-[1.02] tracking-[-0.04em] text-ink-soft sm:text-[2.15rem]">
           {service.name}
         </h3>
         <p className="mt-4 max-w-xl text-[0.97rem] leading-7 text-muted">
@@ -61,7 +61,7 @@ export function CapabilityServiceCard({
         {!compact && (
           <ul className="mt-7 space-y-3 border-t border-line pt-6" aria-label="Selected capabilities">
             {service.capabilities.slice(0, 3).map((capability) => (
-              <li key={capability} className="flex items-start gap-3 text-sm leading-6 text-ink">
+              <li key={capability} className="flex items-start gap-3 text-sm leading-6 text-ink-soft">
                 <span
                   aria-hidden="true"
                   className="mt-[0.55rem] size-1.5 shrink-0 rounded-[2px] bg-mineral"

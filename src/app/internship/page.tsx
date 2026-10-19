@@ -80,7 +80,7 @@ export default function InternshipPage() {
               <AlertCircle aria-hidden="true" className="size-8" />
             </div>
             <div className="p-6 lg:p-8 lg:pl-2">
-              <h2 className="text-2xl font-display font-extrabold tracking-[-0.035em] text-ink">
+              <h2 className="text-2xl font-display font-extrabold tracking-[-0.035em] text-ink-soft">
                 Structure is not availability.
               </h2>
               <p className="mt-3 max-w-4xl text-base leading-7 text-muted">
@@ -95,7 +95,7 @@ export default function InternshipPage() {
         </div>
       </section>
 
-      <section id="timeline" className="section-pad scroll-mt-24 bg-ink text-white">
+      <section id="timeline" className="section-pad scroll-mt-24 bg-canvas text-ink-soft">
         <div className="content-shell">
           <SectionHeading
             eyebrow="Intended timeline"
@@ -131,7 +131,7 @@ export default function InternshipPage() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="flex gap-3 rounded-xl border border-line bg-white p-4 text-sm leading-6 text-muted shadow-soft"
+                  className="flex gap-3 rounded-xl border border-line bg-surface p-4 text-sm leading-6 text-muted shadow-soft"
                 >
                   <Check
                     aria-hidden="true"

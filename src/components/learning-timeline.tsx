@@ -12,22 +12,22 @@ export function LearningTimeline({ timeline }: LearningTimelineProps) {
       {timeline.map((item) => (
         <li
           key={item.month}
-          className="relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-white/15 bg-white/[0.06] p-6 sm:p-8"
+          className="relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-line bg-surface/[0.06] p-6 sm:p-8"
         >
           <div
             aria-hidden="true"
-            className="absolute right-0 top-0 font-display text-[7rem] font-black leading-none text-white/[0.04]"
+            className="absolute right-0 top-0 font-display text-[7rem] font-black leading-none text-ink-soft/[0.04]"
           >
             {item.month}
           </div>
           <span className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-signal">
             {item.label}
           </span>
-          <h3 className="relative mt-6 text-3xl font-display font-extrabold leading-none tracking-[-0.035em] text-white">
+          <h3 className="relative mt-6 text-3xl font-display font-extrabold leading-none tracking-[-0.035em] text-ink-soft">
             {item.title}
           </h3>
-          <p className="mt-5 text-sm leading-6 text-white/65">{item.focus}</p>
-          <ul className="mt-7 space-y-3 text-sm leading-6 text-white/75">
+          <p className="mt-5 text-sm leading-6 text-muted">{item.focus}</p>
+          <ul className="mt-7 space-y-3 text-sm leading-6 text-muted">
             {item.activities.map((activity) => (
               <li key={activity} className="flex gap-3">
                 <Check
@@ -38,11 +38,11 @@ export function LearningTimeline({ timeline }: LearningTimelineProps) {
               </li>
             ))}
           </ul>
-          <div className="mt-8 border-t border-white/15 pt-6">
-            <span className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.14em] text-white/55">
+          <div className="mt-8 border-t border-line pt-6">
+            <span className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.14em] text-muted">
               Month milestone
             </span>
-            <p className="mt-3 text-sm leading-6 text-white/80">
+            <p className="mt-3 text-sm leading-6 text-ink-soft/80">
               {item.milestone}
             </p>
           </div>

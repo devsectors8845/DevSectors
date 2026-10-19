@@ -111,9 +111,9 @@ export default function IndustriesPage() {
                     copy: "Who can see, approve, change, and rely on the information in the system?",
                   },
                 ].map(({ icon: Icon, title: itemTitle, copy }) => (
-                  <article key={itemTitle} className="rounded-[1.15rem] border border-line bg-white p-6">
+                  <article key={itemTitle} className="rounded-[1.15rem] border border-line bg-surface p-6">
                     <Icon aria-hidden="true" className="size-5 text-mineral" />
-                    <h3 className="mt-10 text-lg font-extrabold leading-6 text-ink">
+                    <h3 className="mt-10 text-lg font-extrabold leading-6 text-ink-soft">
                       {itemTitle}
                     </h3>
                     <p className="mt-3 text-sm leading-6 text-muted">{copy}</p>
@@ -148,14 +148,14 @@ export default function IndustriesPage() {
               <Link
                 key={service.slug}
                 href={`/services/${service.slug}`}
-                className="group flex min-h-48 flex-col justify-between bg-white p-6 no-underline transition-colors hover:bg-mist/55 sm:p-7"
+                className="group flex min-h-48 flex-col justify-between bg-surface p-6 no-underline transition-colors hover:bg-mist/55 sm:p-7"
               >
                 <span className="flex items-center justify-between gap-4 font-mono text-[0.62rem] font-bold uppercase tracking-[0.14em] text-mineral">
                   CAP / {String(index + 1).padStart(2, "0")}
                   <span className="text-muted">{sectorCount} sectors</span>
                 </span>
                 <span className="mt-10 flex items-end justify-between gap-4">
-                  <strong className="max-w-[16rem] text-lg leading-6 text-ink">
+                  <strong className="max-w-[16rem] text-lg leading-6 text-ink-soft">
                     {service.name}
                   </strong>
                   <ArrowRight

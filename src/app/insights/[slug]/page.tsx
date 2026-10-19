@@ -111,7 +111,7 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
         description={article.excerpt}
         marker={`READ / ${article.readingMinutes}M`}
       >
-        <span className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 bg-white/[0.06] px-4 text-sm font-bold text-white/75">
+        <span className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-surface/[0.06] px-4 text-sm font-bold text-muted">
           <Clock3 aria-hidden="true" className="size-4 text-signal" />
           {article.readingMinutes} minute read
         </span>

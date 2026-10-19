@@ -116,7 +116,7 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="space-y-7">
-            <p className="text-3xl font-display font-extrabold leading-[1.08] tracking-[-0.035em] text-ink sm:text-4xl">
+            <p className="text-3xl font-display font-extrabold leading-[1.08] tracking-[-0.035em] text-ink-soft sm:text-4xl">
               DevSectors is a product and engineering studio for teams that need
               to turn operational complexity into understandable digital work.
             </p>
@@ -151,7 +151,7 @@ export default function AboutPage() {
               return (
                 <article
                   key={principle.title}
-                  className="card-lift rounded-[1.5rem] border border-line bg-white p-6 shadow-soft sm:p-8"
+                  className="card-lift rounded-[1.5rem] border border-line bg-surface p-6 shadow-soft sm:p-8"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <span className="flex size-12 items-center justify-center rounded-xl bg-mist text-mineral">
@@ -161,7 +161,7 @@ export default function AboutPage() {
                       0{index + 1}
                     </span>
                   </div>
-                  <h3 className="mt-8 text-2xl font-display font-extrabold leading-none tracking-[-0.035em] text-ink">
+                  <h3 className="mt-8 text-2xl font-display font-extrabold leading-none tracking-[-0.035em] text-ink-soft">
                     {principle.title}
                   </h3>
                   <p className="mt-4 text-base leading-7 text-muted">
@@ -187,7 +187,7 @@ export default function AboutPage() {
                 <span className="font-mono text-xs font-bold text-mineral">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-6 text-2xl font-display font-extrabold leading-none tracking-[-0.035em] text-ink">
+                <h3 className="mt-6 text-2xl font-display font-extrabold leading-none tracking-[-0.035em] text-ink-soft">
                   {service.name}
                 </h3>
                 <p className="mt-4 text-sm leading-6 text-muted">
@@ -202,7 +202,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section id="team" className="section-pad bg-ink text-white">
+      <section id="team" className="section-pad bg-canvas text-ink-soft">
         <div className="content-shell grid gap-12 lg:grid-cols-[0.78fr_1.22fr] lg:gap-20">
           <SectionHeading
             eyebrow="Team composition"
@@ -210,7 +210,7 @@ export default function AboutPage() {
             inverse
           />
           <div>
-            <p className="text-xl leading-8 text-white/75">
+            <p className="text-xl leading-8 text-muted">
               We do not publish invented executive profiles or imply a fixed team
               size. Each proposal identifies the product, design, engineering,
               quality, and operational ownership the engagement requires. Named
@@ -225,7 +225,7 @@ export default function AboutPage() {
               ].map((item) => (
                 <li
                   key={item}
-                  className="flex gap-3 rounded-xl border border-white/10 bg-white/[0.04] p-4 text-sm text-white/75"
+                  className="flex gap-3 rounded-xl border border-line bg-surface/[0.04] p-4 text-sm text-muted"
                 >
                   <Check
                     aria-hidden="true"
@@ -256,12 +256,12 @@ export default function AboutPage() {
             {engagementModels.map((model, index) => (
               <article
                 key={model.slug}
-                className="rounded-[1.5rem] border border-line bg-white p-6 shadow-soft sm:p-8"
+                className="rounded-[1.5rem] border border-line bg-surface p-6 shadow-soft sm:p-8"
               >
                 <span className="font-mono text-xs font-bold text-mineral">
                   0{index + 1}
                 </span>
-                <h3 className="mt-6 text-2xl font-display font-extrabold leading-none tracking-[-0.035em] text-ink">
+                <h3 className="mt-6 text-2xl font-display font-extrabold leading-none tracking-[-0.035em] text-ink-soft">
                   {model.name}
                 </h3>
                 <p className="mt-4 text-sm leading-6 text-muted">

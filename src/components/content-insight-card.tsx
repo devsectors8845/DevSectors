@@ -16,7 +16,7 @@ export function ContentInsightCard({
 }: ContentInsightCardProps) {
   return (
     <article
-      className={`card-lift group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-line bg-white shadow-soft ${
+      className={`card-lift group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-line bg-surface shadow-soft ${
         featured ? "lg:grid lg:grid-cols-[0.72fr_1.28fr]" : ""
       }`}
     >
@@ -32,12 +32,12 @@ export function ContentInsightCard({
           {Array.from({ length: 15 }).map((_, markerIndex) => (
             <span
               key={markerIndex}
-              className={`aspect-square rounded-[3px] border border-ink/10 ${
+              className={`aspect-square rounded-[3px] border border-line ${
                 markerIndex === (index * 3 + 4) % 15
                   ? "bg-coral"
                   : markerIndex % 4 === 0
                     ? "bg-mineral"
-                    : "bg-white/70"
+                    : "bg-surface/70"
               }`}
             />
           ))}
@@ -54,7 +54,7 @@ export function ContentInsightCard({
         </div>
 
         <h3
-          className={`${featured ? "text-3xl sm:text-4xl" : "text-2xl"} mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.035em] text-ink`}
+          className={`${featured ? "text-3xl sm:text-4xl" : "text-2xl"} mt-6 font-display font-extrabold leading-[1.02] tracking-[-0.035em] text-ink-soft`}
         >
           <Link
             href={`/insights/${article.slug}`}
@@ -67,7 +67,7 @@ export function ContentInsightCard({
 
         <Link
           href={`/insights/${article.slug}`}
-          className="mt-8 inline-flex min-h-11 w-fit items-center gap-2 border-b border-ink/20 pb-1 text-sm font-bold text-ink transition-colors hover:border-mineral hover:text-mineral"
+          className="mt-8 inline-flex min-h-11 w-fit items-center gap-2 border-b border-line pb-1 text-sm font-bold text-ink-soft transition-colors hover:border-mineral hover:text-mineral"
           aria-label={`Read ${article.title}`}
         >
           Read the field note

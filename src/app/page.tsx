@@ -3,7 +3,6 @@ import Link from "next/link";
 import {
   ArrowRight,
   Check,
-  ChevronDown,
   Cloud,
   Code2,
   Compass,
@@ -14,10 +13,11 @@ import {
 
 import { ButtonLink } from "@/components/button-link";
 import { CtaBand } from "@/components/cta-band";
+import { FaqAccordion } from "@/components/faq-accordion";
+import { HeroMockup } from "@/components/hero-mockup";
 import { JsonLd } from "@/components/json-ld";
 import { ProjectPlanner } from "@/components/project-planner";
 import { SectionHeading } from "@/components/section-heading";
-import { SectorVisual } from "@/components/sector-visual";
 import {
   faqs,
   industries,
@@ -92,61 +92,59 @@ export default function HomePage() {
     <main id="main-content">
       <JsonLd data={homepageStructuredData} />
 
-      <section className="wide-shell pt-2 sm:pt-4" aria-labelledby="home-heading">
-        <div className="sector-grid-dark relative overflow-hidden rounded-[1.35rem] bg-ink text-white sm:rounded-[2rem]">
-          <div
-            className="pointer-events-none absolute -left-24 top-20 size-72 rounded-full bg-mineral/35 blur-3xl"
-            aria-hidden="true"
-          />
-          <div
-            className="pointer-events-none absolute -right-20 top-0 size-64 rounded-full border-[42px] border-signal/10"
-            aria-hidden="true"
-          />
+      <section className="relative overflow-hidden" aria-labelledby="home-heading">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(0,174,239,0.16),transparent_38%),radial-gradient(circle_at_85%_12%,rgba(142,235,77,0.12),transparent_34%),radial-gradient(circle_at_60%_90%,rgba(25,215,197,0.10),transparent_42%)]"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute inset-0 sector-grid-dark opacity-40"
+          aria-hidden="true"
+        />
 
-          <div className="content-shell relative grid items-center gap-14 py-16 lg:grid-cols-[1.06fr_0.94fr] lg:py-24 xl:gap-20">
-            <div>
-              <span className="eyebrow text-signal">
-                Product strategy · design · engineering
-              </span>
-              <h1 id="home-heading" className="display-hero mt-8 max-w-4xl">
-                Software that keeps
-                <span className="block text-signal">real work moving.</span>
-              </h1>
-              <p className="mt-8 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl sm:leading-9">
-                DevSectors plans, designs, and builds dependable custom
-                software, web platforms, mobile apps, automation, and cloud
-                systems for growing teams.
-              </p>
-              <div className="mt-9 flex flex-wrap gap-3">
-                <ButtonLink href="/contact" variant="primary">
-                  Plan your project
-                </ButtonLink>
-                <ButtonLink href="/work" variant="outline-light">
-                  Explore representative work
-                </ButtonLink>
-              </div>
-
-              <ul
-                className="mt-12 grid gap-3 border-t border-white/10 pt-7 sm:grid-cols-3"
-                aria-label="DevSectors delivery principles"
-              >
-                {["Clarity before code", "Reviewable increments", "Maintainable handover"].map(
-                  (principle, index) => (
-                    <li key={principle} className="flex items-start gap-2.5">
-                      <span className="font-mono text-[0.62rem] font-bold text-signal">
-                        0{index + 1}
-                      </span>
-                      <span className="text-sm font-bold text-white/70">
-                        {principle}
-                      </span>
-                    </li>
-                  ),
-                )}
-              </ul>
+        <div className="content-shell relative grid items-center gap-14 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-24">
+          <div>
+            <span className="eyebrow text-signal">
+              Product strategy · design · engineering
+            </span>
+            <h1 id="home-heading" className="display-hero mt-7 max-w-3xl">
+              Software that keeps
+              <span className="ds-gradient-text block">real work moving.</span>
+            </h1>
+            <p className="mt-7 max-w-2xl text-base leading-7 text-muted sm:text-lg sm:leading-8">
+              DevSectors plans, designs, and builds dependable custom
+              software, web platforms, mobile apps, automation, and cloud
+              systems for growing teams.
+            </p>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <ButtonLink href="/contact" variant="primary">
+                Plan your project
+              </ButtonLink>
+              <ButtonLink href="/work" variant="outline-light">
+                Explore representative work
+              </ButtonLink>
             </div>
 
-            <SectorVisual />
+            <ul
+              className="mt-12 grid gap-3 border-t border-line pt-7 sm:grid-cols-3"
+              aria-label="DevSectors delivery principles"
+            >
+              {["Clarity before code", "Reviewable increments", "Maintainable handover"].map(
+                (principle, index) => (
+                  <li key={principle} className="flex items-start gap-2.5">
+                    <span className="font-mono text-[0.62rem] font-bold text-signal">
+                      0{index + 1}
+                    </span>
+                    <span className="text-sm font-bold text-ink-soft/80">
+                      {principle}
+                    </span>
+                  </li>
+                ),
+              )}
+            </ul>
           </div>
+
+          <HeroMockup />
         </div>
       </section>
 
@@ -182,13 +180,13 @@ export default function HomePage() {
             ].map((outcome) => (
               <article
                 key={outcome.number}
-                className="grid gap-4 rounded-2xl border border-line bg-white p-5 shadow-soft sm:block lg:grid lg:grid-cols-[3.5rem_1fr] lg:p-7"
+                className="grid gap-4 rounded-2xl border border-line bg-surface/80 p-5 backdrop-blur-sm transition hover:border-coral/50 hover:shadow-lift sm:block lg:grid lg:grid-cols-[3.5rem_1fr] lg:p-7"
               >
-                <span className="font-mono text-xs font-bold text-mineral">
+                <span className="font-mono text-xs font-bold text-coral">
                   {outcome.number}
                 </span>
                 <div>
-                  <h3 className="text-lg font-extrabold">{outcome.title}</h3>
+                  <h3 className="text-lg font-extrabold text-ink-soft">{outcome.title}</h3>
                   <p className="mt-2 text-sm leading-6 text-muted">
                     {outcome.text}
                   </p>
@@ -211,7 +209,7 @@ export default function HomePage() {
               }
               description="Start with focused advice, a complete product build, or a practical improvement to software already in use."
             />
-            <ButtonLink href="/services" variant="outline" className="w-fit">
+            <ButtonLink href="/services" variant="outline-light" className="w-fit">
               View all services
             </ButtonLink>
           </div>
@@ -223,17 +221,17 @@ export default function HomePage() {
               return (
                 <article
                   key={service.slug}
-                  className="card-lift group flex min-h-[24rem] flex-col rounded-[1.5rem] border border-line bg-canvas p-6 sm:p-8"
+                  className="card-lift group flex min-h-[24rem] flex-col rounded-[1.5rem] border border-line bg-surface/70 p-6 backdrop-blur-sm transition hover:border-coral/45 sm:p-8"
                 >
                   <div className="flex items-start justify-between gap-5">
-                    <span className="flex size-12 items-center justify-center rounded-2xl bg-mist text-mineral transition group-hover:bg-mineral group-hover:text-white">
+                    <span className="flex size-12 items-center justify-center rounded-2xl bg-surface-3 text-coral transition group-hover:bg-gradient-to-br group-hover:from-signal group-hover:to-coral group-hover:text-ink">
                       <Icon aria-hidden="true" className="size-5" />
                     </span>
                     <span className="font-mono text-[0.65rem] font-bold text-muted">
                       0{index + 1}
                     </span>
                   </div>
-                  <h3 className="font-display mt-8 text-3xl font-black leading-none tracking-[-0.04em]">
+                  <h3 className="font-display mt-8 text-3xl font-black leading-none tracking-[-0.04em] text-ink-soft">
                     {service.name}
                   </h3>
                   <p className="mt-4 text-sm leading-6 text-muted">
@@ -243,11 +241,11 @@ export default function HomePage() {
                     {service.capabilities.slice(0, 2).map((capability) => (
                       <li
                         key={capability}
-                        className="flex items-start gap-2 text-xs font-bold leading-5 text-ink/70"
+                        className="flex items-start gap-2 text-xs font-bold leading-5 text-ink-soft/70"
                       >
                         <Check
                           aria-hidden="true"
-                          className="mt-0.5 size-3.5 shrink-0 text-mineral"
+                          className="mt-0.5 size-3.5 shrink-0 text-coral"
                         />
                         {capability}
                       </li>
@@ -256,7 +254,7 @@ export default function HomePage() {
                   <Link
                     href={`/services/${service.slug}`}
                     aria-label={`Explore ${service.name}`}
-                    className="mt-auto inline-flex min-h-11 items-end gap-2 pt-7 text-sm font-extrabold text-mineral transition hover:text-mineral-dark"
+                    className="mt-auto inline-flex min-h-11 items-end gap-2 pt-7 text-sm font-extrabold text-coral transition hover:text-signal"
                   >
                     Explore capability
                     <ArrowRight
@@ -272,11 +270,15 @@ export default function HomePage() {
       </section>
 
       <section className="wide-shell py-2 sm:py-4" aria-labelledby="process-heading">
-        <div className="sector-grid-dark rounded-[1.35rem] bg-mineral py-16 text-white sm:rounded-[2rem] lg:py-24">
-          <div className="content-shell">
+        <div className="relative overflow-hidden rounded-[1.5rem] border border-line bg-gradient-to-br from-surface-2 via-surface to-canvas py-16 text-ink-soft sm:rounded-[2rem] lg:py-24">
+          <div className="sector-grid-dark pointer-events-none absolute inset-0 opacity-50" aria-hidden="true" />
+          <div
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_10%,rgba(0,174,239,0.22),transparent_40%),radial-gradient(circle_at_85%_85%,rgba(25,215,197,0.18),transparent_42%)]"
+            aria-hidden="true"
+          />
+          <div className="content-shell relative">
             <SectionHeading
               eyebrow="A visible delivery rhythm"
-              inverse
               title={
                 <span id="process-heading">
                   Learn early. Build deliberately. Leave a clear path forward.
@@ -285,16 +287,19 @@ export default function HomePage() {
               description="Every engagement is shaped to its context, but the work follows a transparent sequence with useful review points."
             />
 
-            <ol className="mt-14 grid gap-px overflow-hidden rounded-[1.5rem] border border-white/15 bg-white/15 md:grid-cols-2 xl:grid-cols-4">
+            <ol className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
               {services[0].process.map((step) => (
-                <li key={step.step} className="bg-mineral-dark/90 p-6 sm:p-8">
-                  <span className="flex size-10 items-center justify-center rounded-full border border-signal/50 font-mono text-xs font-bold text-signal">
+                <li
+                  key={step.step}
+                  className="rounded-[1.25rem] border border-line bg-surface/70 p-6 backdrop-blur-sm transition hover:border-coral/50 sm:p-8"
+                >
+                  <span className="flex size-10 items-center justify-center rounded-full border border-coral/50 bg-gradient-to-br from-signal/20 to-coral/20 font-mono text-xs font-bold text-signal">
                     {String(step.step).padStart(2, "0")}
                   </span>
-                  <h3 className="font-display mt-14 text-2xl font-black leading-none tracking-[-0.035em]">
+                  <h3 className="font-display mt-10 text-2xl font-black leading-none tracking-[-0.035em] text-ink-soft">
                     {step.title}
                   </h3>
-                  <p className="mt-4 text-sm leading-6 text-white/60">
+                  <p className="mt-4 text-sm leading-6 text-muted">
                     {step.description}
                   </p>
                 </li>
@@ -316,8 +321,8 @@ export default function HomePage() {
               }
               description="These anonymized scenarios show the problems, decisions, and deliverables our team is equipped to address."
             />
-            <div className="rounded-2xl border border-coral/30 bg-coral/10 p-5 text-sm leading-6 text-ink/75">
-              <strong className="block text-ink">Clear disclosure</strong>
+            <div className="rounded-2xl border border-coral/30 bg-coral/10 p-5 text-sm leading-6 text-ink-soft/80">
+              <strong className="block text-ink-soft">Clear disclosure</strong>
               <span className="mt-1 block">{workItems[0].disclosure}</span>
             </div>
           </div>
@@ -326,48 +331,27 @@ export default function HomePage() {
             {workItems.slice(0, 3).map((work, index) => (
               <article
                 key={work.slug}
-                className={`card-lift group flex min-h-[31rem] flex-col overflow-hidden rounded-[1.5rem] border border-line ${
-                  index === 1 ? "bg-ink text-white" : "bg-white text-ink"
-                }`}
+                className="card-lift group flex min-h-[31rem] flex-col overflow-hidden rounded-[1.5rem] border border-line bg-surface/70 backdrop-blur-sm transition hover:border-coral/45"
               >
-                <div
-                  className={`sector-grid flex h-44 items-end p-6 ${
-                    index === 0
-                      ? "bg-mist"
-                      : index === 1
-                        ? "bg-signal text-ink"
-                        : "bg-paper"
-                  }`}
-                >
-                  <span className="font-display text-6xl font-black tracking-[-0.07em] opacity-20">
+                <div className="sector-grid-dark relative flex h-44 items-end overflow-hidden bg-gradient-to-br from-surface-2 to-canvas p-6">
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(0,174,239,0.18),transparent_45%)]" aria-hidden="true" />
+                  <span className="font-display relative text-6xl font-black tracking-[-0.07em] text-ink-soft/15">
                     S{String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
                 <div className="flex flex-1 flex-col p-6 sm:p-7">
                   <div className="flex flex-wrap items-center gap-2 font-mono text-[0.6rem] font-bold uppercase tracking-wider">
-                    <span className={index === 1 ? "text-signal" : "text-mineral"}>
-                      {work.representativeLabel}
-                    </span>
-                    <span className={index === 1 ? "text-white/55" : "text-muted"}>
-                      / {getIndustryName(work.industrySlug)}
-                    </span>
+                    <span className="text-signal">{work.representativeLabel}</span>
+                    <span className="text-muted">/ {getIndustryName(work.industrySlug)}</span>
                   </div>
-                  <h3 className="font-display mt-5 text-3xl font-black leading-none tracking-[-0.04em]">
+                  <h3 className="font-display mt-5 text-3xl font-black leading-none tracking-[-0.04em] text-ink-soft">
                     {work.title}
                   </h3>
-                  <p
-                    className={`mt-4 text-sm leading-6 ${
-                      index === 1 ? "text-white/60" : "text-muted"
-                    }`}
-                  >
-                    {work.summary}
-                  </p>
+                  <p className="mt-4 text-sm leading-6 text-muted">{work.summary}</p>
                   <Link
                     href={`/work/${work.slug}`}
                     aria-label={`Read representative engagement: ${work.title}`}
-                    className={`mt-auto inline-flex min-h-11 items-end gap-2 pt-7 text-sm font-extrabold ${
-                      index === 1 ? "text-signal" : "text-mineral"
-                    }`}
+                    className="mt-auto inline-flex min-h-11 items-end gap-2 pt-7 text-sm font-extrabold text-coral transition hover:text-signal"
                   >
                     Review the scenario
                     <ArrowRight
@@ -381,7 +365,7 @@ export default function HomePage() {
           </div>
 
           <div className="mt-8 flex justify-center">
-            <ButtonLink href="/work" variant="outline">
+            <ButtonLink href="/work" variant="outline-light">
               View all representative work
             </ButtonLink>
           </div>
@@ -410,12 +394,12 @@ export default function HomePage() {
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="group flex min-h-52 flex-col rounded-2xl border border-line bg-canvas p-6 transition hover:-translate-y-1 hover:border-mineral/40 hover:shadow-soft"
+                className="group flex min-h-52 flex-col rounded-2xl border border-line bg-surface/70 p-6 backdrop-blur-sm transition hover:-translate-y-1 hover:border-coral/45 hover:shadow-lift"
               >
-                <span className="font-mono text-[0.62rem] font-bold text-mineral">
+                <span className="font-mono text-[0.62rem] font-bold text-coral">
                   {String(index + 1).padStart(2, "0")} / sector
                 </span>
-                <h3 className="font-display mt-7 text-2xl font-black leading-none tracking-[-0.035em]">
+                <h3 className="font-display mt-7 text-2xl font-black leading-none tracking-[-0.035em] text-ink-soft">
                   {industry.name}
                 </h3>
                 <p className="mt-3 text-sm leading-6 text-muted">
@@ -423,7 +407,7 @@ export default function HomePage() {
                 </p>
                 <ArrowRight
                   aria-hidden="true"
-                  className="mt-auto size-4 self-end text-mineral transition-transform group-hover:translate-x-1"
+                  className="mt-auto size-4 self-end text-coral transition-transform group-hover:translate-x-1"
                 />
               </Link>
             ))}
@@ -443,7 +427,7 @@ export default function HomePage() {
               }
               description="Field notes for product owners and operating teams planning software, websites, automation, and reliable releases."
             />
-            <ButtonLink href="/insights" variant="outline" className="w-fit">
+            <ButtonLink href="/insights" variant="outline-light" className="w-fit">
               Read all insights
             </ButtonLink>
           </div>
@@ -452,22 +436,22 @@ export default function HomePage() {
             {insights.slice(0, 3).map((insight) => (
               <article
                 key={insight.slug}
-                className="card-lift group flex min-h-[25rem] flex-col rounded-[1.5rem] border border-line bg-white p-6 sm:p-8"
+                className="card-lift group flex min-h-[25rem] flex-col rounded-[1.5rem] border border-line bg-[#f3f7fa] p-6 text-[#062833] sm:p-8"
               >
-                <div className="flex items-center justify-between gap-4 font-mono text-[0.62rem] font-bold uppercase tracking-wider text-muted">
-                  <span className="text-mineral">{insight.category}</span>
+                <div className="flex items-center justify-between gap-4 font-mono text-[0.62rem] font-bold uppercase tracking-wider text-[#6f8d97]">
+                  <span className="text-[#00aeef]">{insight.category}</span>
                   <span>{insight.readingMinutes} min read</span>
                 </div>
                 <h3 className="font-display mt-10 text-3xl font-black leading-[0.98] tracking-[-0.04em]">
                   {insight.title}
                 </h3>
-                <p className="mt-5 text-sm leading-6 text-muted">
+                <p className="mt-5 text-sm leading-6 text-[#3c5a64]">
                   {insight.excerpt}
                 </p>
                 <Link
                   href={`/insights/${insight.slug}`}
                   aria-label={`Read: ${insight.title}`}
-                  className="mt-auto inline-flex min-h-11 items-end gap-2 pt-7 text-sm font-extrabold text-mineral"
+                  className="mt-auto inline-flex min-h-11 items-end gap-2 pt-7 text-sm font-extrabold text-[#0a5b70] transition hover:text-[#19d7c5]"
                 >
                   Read the article
                   <ArrowRight
@@ -481,13 +465,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-ink section-pad text-white" aria-labelledby="planner-heading">
+      <section className="bg-[#e8edf0] section-pad" aria-labelledby="planner-heading">
         <div className="content-shell">
           <SectionHeading
             eyebrow="Interactive project planner"
-            inverse
             title={
-              <span id="planner-heading">
+              <span id="planner-heading" className="text-[#062833]">
                 Turn an open idea into a useful first conversation.
               </span>
             }
@@ -507,29 +490,17 @@ export default function HomePage() {
               title={<span id="faq-heading">A clear start needs honest answers.</span>}
               description="Understand how scope, pricing, technology, ownership, and delivery are approached before you get in touch."
             />
-            <ButtonLink href="/faq" variant="outline" className="mt-8 w-fit">
+            <ButtonLink href="/faq" variant="outline-light" className="mt-8 w-fit">
               Browse every answer
             </ButtonLink>
           </div>
 
-          <div className="divide-y divide-line border-y border-line">
-            {homeFaqs.map((faq, index) => (
-              <details key={faq.id} className="group" open={index === 0}>
-                <summary className="flex min-h-20 list-none items-center justify-between gap-5 py-5 font-extrabold [&::-webkit-details-marker]:hidden">
-                  <span>{faq.question}</span>
-                  <span className="flex size-9 shrink-0 items-center justify-center rounded-full border border-line bg-white text-mineral">
-                    <ChevronDown
-                      aria-hidden="true"
-                      className="size-4 transition-transform group-open:rotate-180"
-                    />
-                  </span>
-                </summary>
-                <p className="max-w-3xl pb-7 pr-12 text-sm leading-7 text-muted sm:text-base">
-                  {faq.answer}
-                </p>
-              </details>
-            ))}
-          </div>
+          <FaqAccordion
+            items={homeFaqs}
+            idPrefix="faq-home"
+            showIndex={false}
+            defaultOpenFirst
+          />
         </div>
       </section>
 

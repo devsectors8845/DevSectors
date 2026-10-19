@@ -12,7 +12,7 @@ export function EngagementModelCard({
   index,
 }: EngagementModelCardProps) {
   return (
-    <article className="grid overflow-hidden rounded-[1.5rem] border border-line bg-white shadow-soft lg:grid-cols-[0.34fr_0.66fr]">
+    <article className="grid overflow-hidden rounded-[1.5rem] border border-line bg-surface shadow-soft lg:grid-cols-[0.34fr_0.66fr]">
       <div className="sector-grid flex flex-col justify-between bg-paper p-6 sm:p-8">
         <span className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-mineral">
           Model / {String(index + 1).padStart(2, "0")}
@@ -21,13 +21,13 @@ export function EngagementModelCard({
           <span className="font-display text-7xl font-black leading-none text-mineral/15">
             0{index + 1}
           </span>
-          <h3 className="mt-3 text-3xl font-display font-extrabold leading-none tracking-[-0.04em] text-ink">
+          <h3 className="mt-3 text-3xl font-display font-extrabold leading-none tracking-[-0.04em] text-ink-soft">
             {model.name}
           </h3>
         </div>
       </div>
       <div className="p-6 sm:p-8 lg:p-10">
-        <p className="max-w-2xl text-lg leading-8 text-ink">{model.summary}</p>
+        <p className="max-w-2xl text-lg leading-8 text-ink-soft">{model.summary}</p>
         <div className="mt-8 grid gap-8 md:grid-cols-2">
           <div>
             <h4 className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.15em] text-mineral">
@@ -46,7 +46,7 @@ export function EngagementModelCard({
         </div>
         <div className="mt-8 grid gap-8 border-t border-line pt-8 md:grid-cols-2">
           <div>
-            <h4 className="text-sm font-bold text-ink">Included focus</h4>
+            <h4 className="text-sm font-bold text-ink-soft">Included focus</h4>
             <ul className="mt-4 space-y-3">
               {model.includes.map((item) => (
                 <li key={item} className="flex gap-3 text-sm leading-6 text-muted">
@@ -60,7 +60,7 @@ export function EngagementModelCard({
             </ul>
           </div>
           <div>
-            <h4 className="text-sm font-bold text-ink">Commercial approach</h4>
+            <h4 className="text-sm font-bold text-ink-soft">Commercial approach</h4>
             <p className="mt-4 text-sm leading-6 text-muted">
               {model.commercialApproach}
             </p>

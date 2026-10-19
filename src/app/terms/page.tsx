@@ -33,7 +33,7 @@ export default function TermsPage() {
           <p className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.16em] text-muted">
             Last updated / 12 August 2026
           </p>
-          <p className="mt-8 text-xl leading-9 text-ink">
+          <p className="mt-8 text-xl leading-9 text-ink-soft">
             By using this website, you agree to use it lawfully and understand
             that its public content is general information, not a promise of a
             particular project outcome.

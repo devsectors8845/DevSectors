@@ -68,7 +68,7 @@ export default function PrivacyPage() {
           </aside>
 
           <article className="prose-devsectors">
-            <p className="text-xl leading-9 text-ink">
+            <p className="text-xl leading-9 text-ink-soft">
               DevSectors collects only the information needed to respond to an
               enquiry, operate this website, and protect it from misuse. We do
               not sell personal information or add project enquirers to a

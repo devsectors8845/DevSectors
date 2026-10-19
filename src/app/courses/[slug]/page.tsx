@@ -106,11 +106,11 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
         description={course.shortDescription}
         marker="DS / COURSE"
       >
-        <span className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 bg-white/[0.06] px-4 text-sm font-bold text-white/75">
+        <span className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-surface/[0.06] px-4 text-sm font-bold text-muted">
           <Clock3 aria-hidden="true" className="size-4 text-signal" />
           {course.duration}
         </span>
-        <span className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 bg-white/[0.06] px-4 text-sm font-bold text-white/75">
+        <span className="inline-flex min-h-11 items-center gap-2 rounded-full border border-line bg-surface/[0.06] px-4 text-sm font-bold text-muted">
           <GraduationCap aria-hidden="true" className="size-4 text-signal" />
           {course.level}
         </span>
@@ -146,7 +146,7 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
               ))}
             </dl>
             <div className="mt-7 rounded-[1.25rem] border border-coral/25 bg-coral/[0.07] p-5">
-              <p className="text-sm font-bold text-ink">Availability must be confirmed.</p>
+              <p className="text-sm font-bold text-ink-soft">Availability must be confirmed.</p>
               <p className="mt-2 text-sm leading-6 text-muted">
                 {course.availabilityNotice} No seat, fee, instructor, or schedule
                 is promised by this page.
@@ -167,19 +167,19 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
               {course.modules.map((module, index) => (
                 <li
                   key={module}
-                  className="grid min-h-20 grid-cols-[3rem_1fr] items-center gap-4 rounded-xl border border-line bg-white p-4 shadow-soft sm:grid-cols-[4rem_1fr] sm:p-5"
+                  className="grid min-h-20 grid-cols-[3rem_1fr] items-center gap-4 rounded-xl border border-line bg-surface p-4 shadow-soft sm:grid-cols-[4rem_1fr] sm:p-5"
                 >
                   <span className="font-mono text-xs font-bold text-mineral">
                     {String(index + 1).padStart(2, "0")}
                   </span>
-                  <span className="text-base font-bold leading-6 text-ink">{module}</span>
+                  <span className="text-base font-bold leading-6 text-ink-soft">{module}</span>
                 </li>
               ))}
             </ol>
 
             <div className="mt-16 grid gap-10 md:grid-cols-2">
               <div>
-                <h3 className="text-3xl font-display font-extrabold tracking-[-0.04em] text-ink">
+                <h3 className="text-3xl font-display font-extrabold tracking-[-0.04em] text-ink-soft">
                   Intended learning outcomes
                 </h3>
                 <ul className="mt-6 space-y-4">
@@ -195,7 +195,7 @@ export default async function CourseDetailPage({ params }: CoursePageProps) {
                 </ul>
               </div>
               <div>
-                <h3 className="text-3xl font-display font-extrabold tracking-[-0.04em] text-ink">
+                <h3 className="text-3xl font-display font-extrabold tracking-[-0.04em] text-ink-soft">
                   Prerequisites
                 </h3>
                 <ul className="mt-6 space-y-4">

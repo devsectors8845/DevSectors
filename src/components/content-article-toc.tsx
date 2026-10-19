@@ -13,7 +13,7 @@ export function ContentArticleToc({ sections }: ContentArticleTocProps) {
       <span className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.16em] text-mineral">
         On this page
       </span>
-      <ol className="mt-5 space-y-1 border-l border-ink/10 pl-4">
+      <ol className="mt-5 space-y-1 border-l border-line pl-4">
         {sections.map((section, index) => (
           <li key={section.id}>
             <a

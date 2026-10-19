@@ -122,7 +122,7 @@ export default function ServicesPage() {
               ].map(({ icon: Icon, step, title: stepTitle, copy }) => (
                 <li
                   key={step}
-                  className="rounded-[1.2rem] border border-ink/10 bg-white/80 p-6 backdrop-blur sm:p-8"
+                  className="rounded-[1.2rem] border border-line bg-surface/80 p-6 backdrop-blur sm:p-8"
                 >
                   <div className="flex items-center justify-between">
                     <Icon aria-hidden="true" className="size-6 text-mineral" />
@@ -130,7 +130,7 @@ export default function ServicesPage() {
                       {step}
                     </span>
                   </div>
-                  <h3 className="mt-12 font-display text-3xl font-extrabold tracking-[-0.04em] text-ink">
+                  <h3 className="mt-12 font-display text-3xl font-extrabold tracking-[-0.04em] text-ink-soft">
                     {stepTitle}
                   </h3>
                   <p className="mt-4 text-sm leading-7 text-muted">{copy}</p>
@@ -154,13 +154,13 @@ export default function ServicesPage() {
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="group flex min-h-44 flex-col justify-between bg-white p-6 no-underline transition-colors hover:bg-mist/60 sm:p-7"
+                className="group flex min-h-44 flex-col justify-between bg-surface p-6 no-underline transition-colors hover:bg-mist/60 sm:p-7"
               >
                 <span className="font-mono text-[0.62rem] font-bold uppercase tracking-[0.15em] text-mineral">
                   {industry.relatedServiceSlugs.length} connected capabilities
                 </span>
                 <span className="mt-8 flex items-end justify-between gap-4">
-                  <strong className="max-w-[15rem] text-lg leading-6 text-ink">
+                  <strong className="max-w-[15rem] text-lg leading-6 text-ink-soft">
                     {industry.name}
                   </strong>
                   <ArrowRight

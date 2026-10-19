@@ -80,7 +80,7 @@ export default function FaqPage() {
               <a
                 key={category}
                 href={`#faq-${category.toLocaleLowerCase()}`}
-                className="inline-flex min-h-11 items-center rounded-full border border-muted bg-white px-4 text-sm font-bold text-muted transition-colors hover:border-mineral hover:text-mineral"
+                className="inline-flex min-h-11 items-center rounded-full border border-muted bg-surface px-4 text-sm font-bold text-muted transition-colors hover:border-mineral hover:text-mineral"
               >
                 {category}
               </a>
@@ -106,7 +106,7 @@ export default function FaqPage() {
                     <span className="eyebrow text-mineral">Question group</span>
                     <h2
                       id={`faq-${category.toLocaleLowerCase()}-heading`}
-                      className="mt-5 text-4xl font-display font-extrabold tracking-[-0.04em] text-ink"
+                      className="mt-5 text-4xl font-display font-extrabold tracking-[-0.04em] text-ink-soft"
                     >
                       {category}
                     </h2>

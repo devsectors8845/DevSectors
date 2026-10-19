@@ -10,7 +10,7 @@ type TalentRoleCardProps = {
 
 export function TalentRoleCard({ role, index }: TalentRoleCardProps) {
   return (
-    <article className="card-lift group flex h-full flex-col rounded-[1.5rem] border border-line bg-white p-6 shadow-soft sm:p-8">
+    <article className="card-lift group flex h-full flex-col rounded-[1.5rem] border border-line bg-surface p-6 shadow-soft sm:p-8">
       <div className="flex items-start justify-between gap-4">
         <span className="flex size-11 items-center justify-center rounded-xl bg-paper text-mineral">
           <BriefcaseBusiness aria-hidden="true" className="size-5" />
@@ -22,7 +22,7 @@ export function TalentRoleCard({ role, index }: TalentRoleCardProps) {
       <p className="mt-7 text-xs font-bold uppercase tracking-[0.12em] text-mineral">
         {role.discipline}
       </p>
-      <h3 className="mt-3 text-3xl font-display font-extrabold leading-none tracking-[-0.04em] text-ink">
+      <h3 className="mt-3 text-3xl font-display font-extrabold leading-none tracking-[-0.04em] text-ink-soft">
         <Link
           href={`/talent/${role.slug}`}
           className="transition-colors hover:text-mineral"
@@ -46,7 +46,7 @@ export function TalentRoleCard({ role, index }: TalentRoleCardProps) {
       </p>
       <Link
         href={`/talent/${role.slug}`}
-        className="mt-auto inline-flex min-h-11 w-fit items-center gap-2 pt-7 text-sm font-bold text-ink transition-colors hover:text-mineral"
+        className="mt-auto inline-flex min-h-11 w-fit items-center gap-2 pt-7 text-sm font-bold text-ink-soft transition-colors hover:text-mineral"
         aria-label={`View the ${role.title} talent-network profile`}
       >
         View capability profile

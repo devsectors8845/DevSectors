@@ -17,7 +17,7 @@ export default function ErrorPage({
 
   return (
     <main id="main-content" className="content-shell flex min-h-[70vh] items-center py-16">
-      <section className="w-full rounded-[1.75rem] border border-ink/10 bg-paper p-7 sm:p-12">
+      <section className="w-full rounded-[1.75rem] border border-line bg-paper p-7 sm:p-12">
         <span className="flex size-12 items-center justify-center rounded-full bg-coral/15 text-coral-ink">
           <AlertTriangle aria-hidden="true" className="size-6" />
         </span>
