@@ -39,7 +39,7 @@ export function ContentInsightFilter({ articles }: ContentInsightFilterProps) {
 
   return (
     <div>
-      <div className="rounded-[1.5rem] border border-line bg-surface p-5 shadow-soft sm:p-6">
+      <div className="glass-card rounded-[1.5rem] p-5 sm:p-6">
         <div className="grid gap-5 lg:grid-cols-[minmax(16rem,0.7fr)_1.3fr] lg:items-end">
           <div>
             <label htmlFor="insight-search" className="text-sm font-bold text-ink-soft">
@@ -57,7 +57,7 @@ export function ContentInsightFilter({ articles }: ContentInsightFilterProps) {
                 onChange={(event) => setQuery(event.target.value)}
                 placeholder="Search a topic or decision"
                 aria-controls="insight-results"
-                className="min-h-12 w-full rounded-full border border-muted bg-canvas py-3 pl-11 pr-11 text-sm text-ink-soft placeholder:text-muted focus:border-mineral"
+                className="min-h-12 w-full rounded-full border border-line bg-white/[0.04] py-3 pl-11 pr-11 text-sm text-ink-soft placeholder:text-muted focus:border-coral focus:ring-4 focus:ring-coral/10"
               />
               {query && (
                 <button
@@ -86,8 +86,8 @@ export function ContentInsightFilter({ articles }: ContentInsightFilterProps) {
                     onClick={() => setCategory(item)}
                     className={`min-h-11 rounded-full border px-4 py-2 text-sm font-bold transition-colors ${
                       isActive
-                        ? "border-line bg-canvas text-ink-soft"
-                        : "border-muted bg-canvas text-muted hover:border-mineral hover:text-mineral"
+                        ? "border-coral/60 bg-coral/15 text-coral"
+                        : "border-line bg-white/[0.03] text-muted hover:border-coral/50 hover:text-coral"
                     }`}
                   >
                     {item}
@@ -131,7 +131,7 @@ export function ContentInsightFilter({ articles }: ContentInsightFilterProps) {
       ) : (
         <div
           id="insight-results"
-          className="mt-6 rounded-[1.5rem] border border-dashed border-line bg-canvas px-6 py-16 text-center"
+          className="mt-6 rounded-[1.5rem] border border-dashed border-line bg-white/[0.02] px-6 py-16 text-center"
         >
           <h3 className="text-2xl font-display font-extrabold tracking-[-0.035em] text-ink-soft">
             No insight matches those filters.

@@ -179,72 +179,78 @@ export function ProjectPlanner() {
   }
 
   return (
-    <div className="overflow-hidden rounded-[1.75rem] border border-black/10 bg-white text-[#062833] shadow-2xl">
+    <div className="glass-panel overflow-hidden rounded-[1.75rem] text-ink-soft">
       <div className="grid lg:grid-cols-[16rem_1fr]">
         <aside
-          className="sector-grid-dark bg-surface-2 p-6 text-ink-soft sm:p-8"
+          className="sector-grid-dark relative overflow-hidden border-b border-line/70 p-6 lg:border-b-0 lg:border-r sm:p-8"
           aria-labelledby="planner-overview-heading"
         >
-          <span className="eyebrow text-signal">Project fit</span>
-          <h3
-            id="planner-overview-heading"
-            className="font-display mt-6 text-3xl font-black leading-none tracking-[-0.04em]"
-          >
-            Build a useful starting brief.
-          </h3>
-          <p className="mt-4 text-sm leading-6 text-[#8fa8b0]">
-            Three decisions. About one minute. No account or email required.
-          </p>
+          <div
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(142,235,77,0.16),transparent_45%),radial-gradient(circle_at_90%_85%,rgba(0,174,239,0.18),transparent_48%)]"
+            aria-hidden="true"
+          />
+          <div className="relative">
+            <span className="eyebrow text-signal">Project fit</span>
+            <h3
+              id="planner-overview-heading"
+              className="font-display mt-6 text-3xl font-black leading-none tracking-[-0.04em] text-ink-soft"
+            >
+              Build a useful starting brief.
+            </h3>
+            <p className="mt-4 text-sm leading-6 text-muted">
+              Three decisions. About one minute. No account or email required.
+            </p>
 
-          <ol className="mt-10 space-y-3" aria-label="Planner progress">
-            {steps.map((item, index) => {
-              const complete = currentStep > index;
-              const active = currentStep === index;
-              return (
-                <li
-                  key={item.key}
-                  aria-current={active ? "step" : undefined}
-                  className={`flex items-center gap-3 rounded-xl border p-3 text-sm ${
-                    active
-                      ? "border-signal/60 bg-signal/10 text-ink-soft"
-                      : "border-black/10 text-[#6f8d97]"
-                  }`}
-                >
-                  <span
-                    className={`flex size-7 shrink-0 items-center justify-center rounded-full font-mono text-[0.65rem] font-bold ${
-                      complete
-                        ? "bg-signal text-[#062833]"
-                        : active
-                          ? "border border-signal text-signal"
-                          : "border border-line"
+            <ol className="mt-10 space-y-3" aria-label="Planner progress">
+              {steps.map((item, index) => {
+                const complete = currentStep > index;
+                const active = currentStep === index;
+                return (
+                  <li
+                    key={item.key}
+                    aria-current={active ? "step" : undefined}
+                    className={`flex items-center gap-3 rounded-xl border p-3 text-sm transition ${
+                      active
+                        ? "border-signal/60 bg-signal/10 text-ink-soft"
+                        : "border-line/80 text-muted"
                     }`}
                   >
-                    {complete ? <Check aria-hidden="true" className="size-4" /> : index + 1}
-                  </span>
-                  {item.key === "goal"
-                    ? "Outcome"
-                    : item.key === "stage"
-                      ? "Starting point"
-                      : "Delivery pace"}
-                  {complete && <span className="sr-only"> — complete</span>}
-                </li>
-              );
-            })}
-          </ol>
+                    <span
+                      className={`flex size-7 shrink-0 items-center justify-center rounded-full font-mono text-[0.65rem] font-bold ${
+                        complete
+                          ? "bg-signal text-[#062833]"
+                          : active
+                            ? "border border-signal text-signal"
+                            : "border border-line"
+                      }`}
+                    >
+                      {complete ? <Check aria-hidden="true" className="size-4" /> : index + 1}
+                    </span>
+                    {item.key === "goal"
+                      ? "Outcome"
+                      : item.key === "stage"
+                        ? "Starting point"
+                        : "Delivery pace"}
+                    {complete && <span className="sr-only"> — complete</span>}
+                  </li>
+                );
+              })}
+            </ol>
+          </div>
         </aside>
 
         <div className="min-h-[35rem] p-5 sm:p-9 lg:p-12">
           {!finished ? (
             <div className="flex h-full flex-col">
               <div>
-                <span className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#0a5b70]">
+                <span className="font-mono text-[0.68rem] font-bold uppercase tracking-[0.16em] text-coral">
                   {step.eyebrow}
                 </span>
                 <h3
                   ref={stepHeadingRef}
                   id={`planner-${step.key}-heading`}
                   tabIndex={-1}
-                  className="font-display mt-4 max-w-2xl text-4xl font-black leading-[0.98] tracking-[-0.045em] sm:text-5xl"
+                  className="font-display mt-4 max-w-2xl text-4xl font-black leading-[0.98] tracking-[-0.045em] text-ink-soft sm:text-5xl"
                 >
                   {step.question}
                 </h3>
@@ -262,11 +268,12 @@ export function ProjectPlanner() {
                       key={option.value}
                       type="button"
                       aria-pressed={selected}
+                      data-selected={selected}
                       onClick={() => choose(option.value)}
-                      className={`min-h-32 rounded-2xl border p-5 text-left transition ${
+                      className={`gradient-border min-h-32 rounded-2xl border p-5 text-left transition ${
                         selected
-                          ? "border-transparent bg-gradient-to-br from-signal/25 via-coral/20 to-mineral/25 shadow-[0_0_0_2px_#19d7c5]"
-                          : "border-black/10 bg-white hover:border-[#19d7c5]/60 hover:bg-[#f3f7fa]"
+                          ? "glass-inset text-ink-soft"
+                          : "border-line/80 bg-white/[0.03] text-ink-soft hover:border-coral/50 hover:bg-white/[0.06]"
                       }`}
                     >
                       <span className="flex items-start justify-between gap-3">
@@ -274,14 +281,14 @@ export function ProjectPlanner() {
                         <span
                           className={`flex size-5 shrink-0 items-center justify-center rounded-full border ${
                             selected
-                              ? "border-[#00aeef] bg-[#00aeef] text-white"
-                              : "border-ink/20"
+                              ? "border-coral bg-coral text-[#062833]"
+                              : "border-line"
                           }`}
                         >
                           {selected && <Check aria-hidden="true" className="size-3" />}
                         </span>
                       </span>
-                      <span className="mt-3 block text-sm leading-6 text-[#3c5a64]">
+                      <span className="mt-3 block text-sm leading-6 text-muted">
                         {option.description}
                       </span>
                     </button>
@@ -303,7 +310,7 @@ export function ProjectPlanner() {
                   type="button"
                   onClick={() => moveToStep(currentStep + 1)}
                   disabled={!answers[step.key]}
-                  className="button-base button-dark disabled:cursor-not-allowed disabled:opacity-40"
+                  className="button-base button-primary disabled:cursor-not-allowed disabled:opacity-40"
                 >
                   {currentStep === steps.length - 1 ? "See starting point" : "Continue"}
                   <ArrowRight aria-hidden="true" className="size-4" />
@@ -312,30 +319,30 @@ export function ProjectPlanner() {
             </div>
           ) : (
             <div className="flex h-full flex-col justify-center">
-              <span className="flex size-12 items-center justify-center rounded-full bg-signal text-[#062833]">
+              <span className="flex size-12 items-center justify-center rounded-full bg-gradient-to-br from-signal to-coral text-[#062833]">
                 <Sparkles aria-hidden="true" className="size-5" />
               </span>
-              <span className="font-mono mt-8 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-[#0a5b70]">
+              <span className="font-mono mt-8 text-[0.68rem] font-bold uppercase tracking-[0.16em] text-coral">
                 Suggested starting point
               </span>
               <h3
                 ref={stepHeadingRef}
                 tabIndex={-1}
-                className="font-display mt-4 max-w-2xl text-4xl font-black leading-[0.98] tracking-[-0.045em] sm:text-5xl"
+                className="font-display mt-4 max-w-2xl text-4xl font-black leading-[0.98] tracking-[-0.045em] text-ink-soft sm:text-5xl"
               >
                 {recommendation.title}
               </h3>
-              <p className="mt-5 max-w-xl text-lg leading-8 text-[#3c5a64]">
+              <p className="mt-5 max-w-xl text-lg leading-8 text-muted">
                 {recommendation.summary}
               </p>
 
               <dl className="mt-8 grid max-w-2xl gap-3 sm:grid-cols-3">
                 {(["goal", "stage", "pace"] as const).map((key) => (
-                  <div key={key} className="rounded-xl bg-[#e8edf0] p-4">
-                    <dt className="font-mono text-[0.58rem] font-bold uppercase tracking-wider text-[#6f8d97]">
+                  <div key={key} className="glass-inset rounded-xl p-4">
+                    <dt className="font-mono text-[0.58rem] font-bold uppercase tracking-wider text-muted">
                       {key === "goal" ? "Outcome" : key === "stage" ? "Stage" : "Pace"}
                     </dt>
-                    <dd className="mt-2 text-sm font-bold leading-5">
+                    <dd className="mt-2 text-sm font-bold leading-5 text-ink-soft">
                       {getOptionLabel(key, answers[key])}
                     </dd>
                   </div>
@@ -343,7 +350,7 @@ export function ProjectPlanner() {
               </dl>
 
               <div className="mt-9 flex flex-wrap gap-3">
-                <Link href={contactHref} className="button-base button-dark">
+                <Link href={contactHref} className="button-base button-primary">
                   Send this brief
                   <ArrowRight aria-hidden="true" className="size-4" />
                 </Link>

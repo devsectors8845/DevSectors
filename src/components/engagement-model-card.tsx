@@ -12,8 +12,8 @@ export function EngagementModelCard({
   index,
 }: EngagementModelCardProps) {
   return (
-    <article className="grid overflow-hidden rounded-[1.5rem] border border-line bg-surface shadow-soft lg:grid-cols-[0.34fr_0.66fr]">
-      <div className="sector-grid flex flex-col justify-between bg-paper p-6 sm:p-8">
+    <article className="glass-card grid overflow-hidden rounded-[1.5rem] lg:grid-cols-[0.34fr_0.66fr]">
+      <div className="sector-grid flex flex-col justify-between border-r border-line/70 bg-white/[0.03] p-6 sm:p-8">
         <span className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-mineral">
           Model / {String(index + 1).padStart(2, "0")}
         </span>

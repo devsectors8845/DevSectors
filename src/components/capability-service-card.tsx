@@ -36,7 +36,7 @@ export function CapabilityServiceCard({
   const sequence = String(index + 1).padStart(2, "0");
 
   return (
-    <article className="card-lift group relative flex h-full flex-col overflow-hidden rounded-[1.35rem] border border-line bg-surface shadow-soft">
+    <article className="glass-card gradient-border group relative flex h-full flex-col overflow-hidden rounded-[1.35rem]">
       <Link
         href={`/services/${service.slug}`}
         className="flex h-full flex-col p-6 no-underline sm:p-8"

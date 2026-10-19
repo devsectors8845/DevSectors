@@ -63,29 +63,17 @@ export function NavMenu() {
   return (
     <>
       <nav aria-label="Primary navigation" className="hidden xl:block">
-        <ul className="flex items-center gap-0.5">
-          {navigationItems.map((item) => {
-            const active =
-              pathIsActive(pathname, item.href) ||
-              item.children?.some((child) =>
-                pathIsActive(pathname, child.href),
-              );
+        <ul className="flex items-center justify-center gap-0.5">
+          {navigationItems
+            .filter((item) => !item.isCallToAction)
+            .map((item) => {
+              const active =
+                pathIsActive(pathname, item.href) ||
+                item.children?.some((child) =>
+                  pathIsActive(pathname, child.href),
+                );
 
-            if (item.isCallToAction) {
-              return (
-                <li key={item.href} className="ml-2">
-                  <Link
-                    href={item.href}
-                    aria-current={active ? "page" : undefined}
-                    className="button-base button-primary min-h-11 px-5"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            }
-
-            if (item.children) {
+              if (item.children) {
               return (
                 <li key={item.href}>
                   <details
@@ -103,7 +91,7 @@ export function NavMenu() {
                         className="size-3.5 transition-transform group-open:rotate-180"
                       />
                     </summary>
-                    <div className="absolute right-0 top-[calc(100%+0.65rem)] w-72 rounded-2xl border border-line bg-surface-2 p-2 shadow-2xl">
+                    <div className="absolute right-0 top-[calc(100%+1.4rem)] w-72 rounded-2xl border border-line bg-surface-2 p-2 shadow-2xl">
                       <Link
                         href={item.href}
                         onClick={closeDisclosure}
@@ -186,9 +174,9 @@ export function NavMenu() {
         <nav
           id="mobile-primary-navigation"
           aria-label="Mobile navigation"
-          className="absolute inset-x-0 top-full max-h-[calc(100dvh-var(--header-height))] overflow-y-auto border-y border-line bg-canvas shadow-2xl xl:hidden"
+          className="absolute inset-x-0 top-[calc(100%+0.5rem)] max-h-[calc(100dvh-var(--header-height)-1.5rem)] overflow-y-auto rounded-[1.25rem] border border-line bg-canvas/95 p-2 shadow-2xl backdrop-blur-xl xl:hidden"
         >
-          <ul className="content-shell space-y-1 py-4">
+          <ul className="space-y-1">
             {navigationItems.map((item) => {
               const active =
                 pathIsActive(pathname, item.href) ||

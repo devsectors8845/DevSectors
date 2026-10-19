@@ -16,16 +16,16 @@ export function ContentInsightCard({
 }: ContentInsightCardProps) {
   return (
     <article
-      className={`card-lift group flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-line bg-surface shadow-soft ${
+      className={`glass-card gradient-border group flex h-full flex-col overflow-hidden rounded-[1.5rem] ${
         featured ? "lg:grid lg:grid-cols-[0.72fr_1.28fr]" : ""
       }`}
     >
       <div
-        className={`sector-grid relative flex min-h-48 flex-col justify-between overflow-hidden bg-paper p-6 sm:p-8 ${
+        className={`sector-grid relative flex min-h-48 flex-col justify-between overflow-hidden border-b border-line/70 bg-white/[0.02] p-6 sm:p-8 ${
           featured ? "lg:min-h-full" : ""
         }`}
       >
-        <span className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-mineral">
+        <span className="font-mono text-xs font-bold uppercase tracking-[0.16em] text-coral">
           Field note / {String(index + 1).padStart(2, "0")}
         </span>
         <div aria-hidden="true" className="mt-12 grid grid-cols-5 gap-2">
@@ -37,7 +37,7 @@ export function ContentInsightCard({
                   ? "bg-coral"
                   : markerIndex % 4 === 0
                     ? "bg-mineral"
-                    : "bg-surface/70"
+                    : "bg-white/10"
               }`}
             />
           ))}
@@ -67,7 +67,7 @@ export function ContentInsightCard({
 
         <Link
           href={`/insights/${article.slug}`}
-          className="mt-8 inline-flex min-h-11 w-fit items-center gap-2 border-b border-line pb-1 text-sm font-bold text-ink-soft transition-colors hover:border-mineral hover:text-mineral"
+          className="mt-8 inline-flex min-h-11 w-fit items-center gap-2 border-b border-line pb-1 text-sm font-bold text-ink-soft transition-colors hover:border-coral hover:text-coral"
           aria-label={`Read ${article.title}`}
         >
           Read the field note

@@ -10,7 +10,7 @@ type LearningCourseCardProps = {
 
 export function LearningCourseCard({ course, index }: LearningCourseCardProps) {
   return (
-    <article className="card-lift group flex h-full flex-col rounded-[1.5rem] border border-line bg-surface p-6 shadow-soft sm:p-8">
+    <article className="glass-card gradient-border group flex h-full flex-col rounded-[1.5rem] p-6 sm:p-8">
       <div className="flex items-start justify-between gap-6">
         <span className="flex size-12 items-center justify-center rounded-xl bg-mist text-mineral">
           <BookOpen aria-hidden="true" className="size-5" />

@@ -45,7 +45,7 @@
   --font-display: Inter, Manrope, ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  --header-height: 4.75rem;
+  --header-height: 4.25rem;
 }
 
 * {
@@ -277,6 +277,101 @@ svg {
     linear-gradient(rgba(0, 174, 239, 0.10) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0, 174, 239, 0.10) 1px, transparent 1px);
   background-size: 42px 42px;
+}
+
+/* Frosted glass surfaces */
+.glass-card {
+  position: relative;
+  background:
+    linear-gradient(
+      158deg,
+      rgba(25, 215, 197, 0.12) 0%,
+      rgba(6, 40, 51, 0.66) 44%,
+      rgba(0, 174, 239, 0.10) 100%
+    );
+  border: 1px solid rgba(25, 215, 197, 0.18);
+  backdrop-filter: blur(20px) saturate(150%);
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    box-shadow 240ms ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(25, 215, 197, 0.42);
+  box-shadow:
+    0 28px 72px rgba(0, 0, 0, 0.44),
+    0 0 44px rgba(25, 215, 197, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel {
+  position: relative;
+  background:
+    radial-gradient(
+      120% 120% at 0% 0%,
+      rgba(142, 235, 77, 0.10),
+      transparent 46%
+    ),
+    radial-gradient(
+      120% 120% at 100% 0%,
+      rgba(0, 174, 239, 0.16),
+      transparent 50%
+    ),
+    linear-gradient(160deg, rgba(8, 47, 59, 0.82), rgba(0, 21, 28, 0.90));
+  border: 1px solid rgba(25, 215, 197, 0.18);
+  backdrop-filter: blur(26px) saturate(150%);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.glass-inset {
+  background:
+    linear-gradient(
+      160deg,
+      rgba(25, 215, 197, 0.08),
+      rgba(6, 40, 51, 0.55) 55%,
+      rgba(0, 174, 239, 0.06)
+    );
+  border: 1px solid rgba(25, 215, 197, 0.16);
+  backdrop-filter: blur(16px) saturate(140%);
+}
+
+/* Gradient hairline border driven by a data attribute */
+.gradient-border {
+  position: relative;
+  isolation: isolate;
+}
+
+.gradient-border::after {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--ds-gradient);
+  content: "";
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 240ms ease;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+.gradient-border:hover::after,
+.gradient-border[data-selected="true"]::after {
+  opacity: 1;
 }
 
 .sector-grid-dark {

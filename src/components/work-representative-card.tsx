@@ -22,8 +22,8 @@ export function WorkRepresentativeCard({
     <article
       className={`card-lift group flex h-full flex-col overflow-hidden rounded-[1.35rem] border p-6 sm:p-8 ${
         inverse
-          ? "border-line bg-surface-2 text-ink-soft"
-          : "border-line bg-surface text-ink-soft shadow-soft"
+          ? "glass-card text-ink-soft"
+          : "glass-card text-ink-soft"
       }`}
     >
       <div className="flex flex-wrap items-center justify-between gap-4">

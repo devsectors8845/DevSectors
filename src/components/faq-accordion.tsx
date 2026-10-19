@@ -83,7 +83,7 @@ export function FaqAccordion({
               <span
                 className={`flex size-10 shrink-0 items-center justify-center rounded-full border border-line transition-colors ${
                   isDark
-                    ? "bg-surface text-ink-soft group-open:bg-canvas"
+                    ? "glass-inset text-ink-soft group-open:bg-surface-3"
                     : "bg-[#e8edf0] text-[#062833] group-open:bg-white"
                 }`}
               >

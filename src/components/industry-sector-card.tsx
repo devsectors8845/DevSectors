@@ -31,7 +31,7 @@ export function IndustrySectorCard({ industry, index }: IndustrySectorCardProps)
   const sequence = String(index + 1).padStart(2, "0");
 
   return (
-    <article className="focus-frame group relative min-h-[24rem] overflow-hidden rounded-[1.35rem] border border-line bg-canvas text-ink-soft shadow-soft">
+    <article className="glass-card gradient-border focus-frame group relative min-h-[24rem] overflow-hidden rounded-[1.35rem] text-ink-soft">
       <div className="sector-grid-dark absolute inset-0 opacity-70" aria-hidden="true" />
       <div
         className="absolute -right-8 -top-8 size-36 rounded-full border-[28px] border-signal/10 transition-transform duration-500 group-hover:scale-110"

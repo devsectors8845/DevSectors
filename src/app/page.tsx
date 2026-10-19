@@ -180,7 +180,7 @@ export default function HomePage() {
             ].map((outcome) => (
               <article
                 key={outcome.number}
-                className="grid gap-4 rounded-2xl border border-line bg-surface/80 p-5 backdrop-blur-sm transition hover:border-coral/50 hover:shadow-lift sm:block lg:grid lg:grid-cols-[3.5rem_1fr] lg:p-7"
+                className="glass-card gradient-border grid gap-4 rounded-2xl p-5 sm:block lg:grid lg:grid-cols-[3.5rem_1fr] lg:p-7"
               >
                 <span className="font-mono text-xs font-bold text-coral">
                   {outcome.number}
@@ -221,7 +221,7 @@ export default function HomePage() {
               return (
                 <article
                   key={service.slug}
-                  className="card-lift group flex min-h-[24rem] flex-col rounded-[1.5rem] border border-line bg-surface/70 p-6 backdrop-blur-sm transition hover:border-coral/45 sm:p-8"
+                  className="glass-card gradient-border group flex min-h-[24rem] flex-col rounded-[1.5rem] p-6 sm:p-8"
                 >
                   <div className="flex items-start justify-between gap-5">
                     <span className="flex size-12 items-center justify-center rounded-2xl bg-surface-3 text-coral transition group-hover:bg-gradient-to-br group-hover:from-signal group-hover:to-coral group-hover:text-ink">
@@ -291,7 +291,7 @@ export default function HomePage() {
               {services[0].process.map((step) => (
                 <li
                   key={step.step}
-                  className="rounded-[1.25rem] border border-line bg-surface/70 p-6 backdrop-blur-sm transition hover:border-coral/50 sm:p-8"
+                  className="glass-inset rounded-[1.25rem] p-6 sm:p-8"
                 >
                   <span className="flex size-10 items-center justify-center rounded-full border border-coral/50 bg-gradient-to-br from-signal/20 to-coral/20 font-mono text-xs font-bold text-signal">
                     {String(step.step).padStart(2, "0")}
@@ -331,7 +331,7 @@ export default function HomePage() {
             {workItems.slice(0, 3).map((work, index) => (
               <article
                 key={work.slug}
-                className="card-lift group flex min-h-[31rem] flex-col overflow-hidden rounded-[1.5rem] border border-line bg-surface/70 backdrop-blur-sm transition hover:border-coral/45"
+                className="glass-card gradient-border group flex min-h-[31rem] flex-col overflow-hidden rounded-[1.5rem]"
               >
                 <div className="sector-grid-dark relative flex h-44 items-end overflow-hidden bg-gradient-to-br from-surface-2 to-canvas p-6">
                   <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_75%_20%,rgba(0,174,239,0.18),transparent_45%)]" aria-hidden="true" />
@@ -394,7 +394,7 @@ export default function HomePage() {
               <Link
                 key={industry.slug}
                 href={`/industries/${industry.slug}`}
-                className="group flex min-h-52 flex-col rounded-2xl border border-line bg-surface/70 p-6 backdrop-blur-sm transition hover:-translate-y-1 hover:border-coral/45 hover:shadow-lift"
+                className="glass-card gradient-border group flex min-h-52 flex-col rounded-2xl p-6"
               >
                 <span className="font-mono text-[0.62rem] font-bold text-coral">
                   {String(index + 1).padStart(2, "0")} / sector
@@ -436,22 +436,22 @@ export default function HomePage() {
             {insights.slice(0, 3).map((insight) => (
               <article
                 key={insight.slug}
-                className="card-lift group flex min-h-[25rem] flex-col rounded-[1.5rem] border border-line bg-[#f3f7fa] p-6 text-[#062833] sm:p-8"
+                className="glass-card gradient-border group flex min-h-[25rem] flex-col overflow-hidden rounded-[1.5rem] p-6 sm:p-8"
               >
-                <div className="flex items-center justify-between gap-4 font-mono text-[0.62rem] font-bold uppercase tracking-wider text-[#6f8d97]">
-                  <span className="text-[#00aeef]">{insight.category}</span>
+                <div className="flex items-center justify-between gap-4 font-mono text-[0.62rem] font-bold uppercase tracking-wider text-muted">
+                  <span className="text-coral">{insight.category}</span>
                   <span>{insight.readingMinutes} min read</span>
                 </div>
-                <h3 className="font-display mt-10 text-3xl font-black leading-[0.98] tracking-[-0.04em]">
+                <h3 className="font-display mt-10 text-3xl font-black leading-[0.98] tracking-[-0.04em] text-ink-soft">
                   {insight.title}
                 </h3>
-                <p className="mt-5 text-sm leading-6 text-[#3c5a64]">
+                <p className="mt-5 text-sm leading-6 text-muted">
                   {insight.excerpt}
                 </p>
                 <Link
                   href={`/insights/${insight.slug}`}
                   aria-label={`Read: ${insight.title}`}
-                  className="mt-auto inline-flex min-h-11 items-end gap-2 pt-7 text-sm font-extrabold text-[#0a5b70] transition hover:text-[#19d7c5]"
+                  className="mt-auto inline-flex min-h-11 items-end gap-2 pt-7 text-sm font-extrabold text-coral transition hover:text-signal"
                 >
                   Read the article
                   <ArrowRight
@@ -465,12 +465,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#e8edf0] section-pad" aria-labelledby="planner-heading">
-        <div className="content-shell">
+      <section className="relative overflow-hidden section-pad" aria-labelledby="planner-heading">
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_18%,rgba(142,235,77,0.12),transparent_38%),radial-gradient(circle_at_88%_12%,rgba(0,174,239,0.16),transparent_42%),radial-gradient(circle_at_50%_95%,rgba(25,215,197,0.12),transparent_46%)]"
+          aria-hidden="true"
+        />
+        <div
+          className="pointer-events-none absolute inset-0 sector-grid-dark opacity-40"
+          aria-hidden="true"
+        />
+        <div className="content-shell relative">
           <SectionHeading
             eyebrow="Interactive project planner"
             title={
-              <span id="planner-heading" className="text-[#062833]">
+              <span id="planner-heading">
                 Turn an open idea into a useful first conversation.
               </span>
             }

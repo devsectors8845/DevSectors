@@ -31,8 +31,22 @@ Buttons: `.button-primary` = gradient, `.button-dark` = canvas, `.button-outline
 
 ## Pages (map current → new)
 
+### Glass system (implemented)
+- `.glass-card` — frosted surface: 158° gradient (cyan 12% → deep surface 66% → blue 10%), 1px cyan-tinted
+  border, `backdrop-filter: blur(20px) saturate(150%)`, layered shadow, hover lift + cyan glow.
+- `.glass-panel` — larger frosted container: dual radial glows (lime/blue) over a deep gradient,
+  `backdrop-filter: blur(26px) saturate(150%)`.
+- `.glass-inset` — nested frosted surface for summary tiles and chips.
+- `.gradient-border` — gradient hairline border driven by `data-selected="true"` or `:hover`, drawn
+  with a masked `::after` pseudo-element so it follows any border radius.
+- Note: never hand-write `-webkit-backdrop-filter` alongside `backdrop-filter` — Lightning CSS dedupes
+  the alias and drops the standard property, silently disabling the blur.
+
 ### Home `/` — 13 sections
-1. Navbar (sticky, blur, gradient CTA).
+1. Navbar — floating centered pill: sticky header with page padding, inner `max-w-[1200px]` container
+   with `rounded-[1.5rem]`, `border-line`, `bg-canvas/85` + backdrop blur. Grid `1fr auto 1fr` so
+   the logo sits left, the link list is viewport-centred, and the gradient pill CTA sits right.
+   Dropdown menus open below the pill; the CTA is `xl`+ only and the mobile sheet matches the pill.
 2. Hero — "Software that keeps real work moving." with gradient headline, `HeroMockup` dashboard
    (delivery board, On track / Scope Aligned / Build Sprint 03, quality review, release queued,
    build velocity chart, mobile release card). No stock photography.
